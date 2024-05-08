@@ -3,10 +3,9 @@
 <ul>
   <% @vegetables.each do |vegetable| %>
     <li>
-        <a href="/vegetables/<%= vegetable.id %>">
-          <%= vegetable.name %>
-        </a>
+         <%= link_to vegetable.name, vegetable %>
     </li>
   <% end %>
 </ul>
 
+<%= link_to "New Vegetable", new_vegetable_path %>

@@ -260,3 +260,203 @@ Processing by VegetablesController#show as HTML
 Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 0.8ms | Allocations: 5486)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-08 12:56:00 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 149.4ms | Allocations: 12621)
+  Rendered layout layouts/application.html.erb (Duration: 487.6ms | Allocations: 61840)
+Completed 200 OK in 579ms (Views: 464.2ms | ActiveRecord: 35.9ms | Allocations: 71923)
+
+
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 12:56:08 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 10.8ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 1590)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.5ms | Allocations: 4208)
+
+
+  
+ActionView::Template::Error (undefined method `vegetablepath' for #<ActionView::Base:0x0000000000c058>):
+    4: <ul>
+    5:   <li><%= link_to "Edit", edit_vegetable_path(@vegetable) %></li>
+    6: 
+    7:   <li><%= link_to "Delete", vegetablepath(@vegetable), data: {
+    8:                     turbo_method: :delete,
+    9:                     turbo_confirm: "Are you sure?" } %></li>
+   10: 
+  
+app/views/vegetables/show.html.erb:7
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 12:59:01 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1157)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 1249)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 15.3ms | Allocations: 6294)
+
+
+  
+ActionView::Template::Error (undefined method `vegetab_lepath' for #<ActionView::Base:0x0000000000fc30>):
+    4: <ul>
+    5:   <li><%= link_to "Edit", edit_vegetable_path(@vegetable) %></li>
+    6: 
+    7:   <li><%= link_to "Delete", vegetab_lepath(@vegetable), data: {
+    8:                     turbo_method: :delete,
+    9:                     turbo_confirm: "Are you sure?" } %></li>
+   10: 
+  
+app/views/vegetables/show.html.erb:7
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 12:59:22 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 290)
+  Rendered layout layouts/application.html.erb (Duration: 135.3ms | Allocations: 23034)
+Completed 200 OK in 204ms (Views: 143.8ms | ActiveRecord: 15.7ms | Allocations: 28140)
+
+
+Started GET "/vegetables/1/edit" for 127.0.0.1 at 2024-05-08 12:59:25 +0600
+Processing by VegetablesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:25:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/edit.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 176.4ms | Allocations: 2475)
+  Rendered vegetables/edit.html.erb within layouts/application (Duration: 179.3ms | Allocations: 2706)
+  Rendered layout layouts/application.html.erb (Duration: 217.1ms | Allocations: 7266)
+Completed 200 OK in 226ms (Views: 218.9ms | ActiveRecord: 0.8ms | Allocations: 8000)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 12:59:27 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 723)
+  Rendered layout layouts/application.html.erb (Duration: 79.3ms | Allocations: 5521)
+Completed 200 OK in 85ms (Views: 79.6ms | ActiveRecord: 2.5ms | Allocations: 5853)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 12:59:30 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 5.6ms | Allocations: 829)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1003)
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 5566)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 0.0ms | Allocations: 5926)
+
+
+Started POST "/vegetables" for 127.0.0.1 at 2024-05-08 12:59:43 +0600
+Processing by VegetablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vegetable"=>{"name"=>"Bean", "description"=>"jjjjjdjdjdjdjd"}, "commit"=>"Create Vegetable"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vegetables_controller.rb:17:in `create'
+  [1m[36mVegetable Create (8.8ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bean"], ["description", "jjjjjdjdjdjdjd"], ["created_at", "2024-05-08 06:59:43.275769"], ["updated_at", "2024-05-08 06:59:43.275769"]]
+  ↳ app/controllers/vegetables_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (32.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vegetables_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/vegetables/3
+Completed 302 Found in 61ms (ActiveRecord: 41.9ms | Allocations: 3471)
+
+
+Started GET "/vegetables/3" for 127.0.0.1 at 2024-05-08 12:59:43 +0600
+Processing by VegetablesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 82)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 4882)
+Completed 200 OK in 45ms (Views: 36.9ms | ActiveRecord: 1.2ms | Allocations: 5599)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 12:59:47 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 8.3ms | Allocations: 788)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 851)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 5413)
+Completed 200 OK in 72ms (Views: 69.4ms | ActiveRecord: 0.0ms | Allocations: 5677)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 12:59:49 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 561)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | Allocations: 5359)
+Completed 200 OK in 78ms (Views: 70.2ms | ActiveRecord: 1.3ms | Allocations: 5621)
+
+
+Started GET "/vegetables/3" for 127.0.0.1 at 2024-05-08 12:59:50 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 82)
+  Rendered layout layouts/application.html.erb (Duration: 52.5ms | Allocations: 4868)
+Completed 200 OK in 63ms (Views: 55.1ms | ActiveRecord: 0.8ms | Allocations: 5540)
+
+
+Started DELETE "/vegetables/3?_method=delete" for 127.0.0.1 at 2024-05-08 12:59:53 +0600
+Processing by VegetablesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mVegetable Load (0.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vegetables_controller.rb:39:in `destroy'
+  [1m[36mVegetable Destroy (6.9ms)[0m  [1m[31mDELETE FROM "vegetables" WHERE "vegetables"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/vegetables_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (44.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vegetables_controller.rb:39:in `destroy'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 70ms (ActiveRecord: 52.8ms | Allocations: 2124)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 12:59:54 +0600
+Processing by VegetablesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 525)
+  Rendered layout layouts/application.html.erb (Duration: 70.1ms | Allocations: 5419)
+Completed 200 OK in 74ms (Views: 71.4ms | ActiveRecord: 1.0ms | Allocations: 5685)
+
+
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 12:59:56 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 63.6ms | Allocations: 4950)
+Completed 200 OK in 80ms (Views: 69.4ms | ActiveRecord: 0.6ms | Allocations: 5621)
+
+
