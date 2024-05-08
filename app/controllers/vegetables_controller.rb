@@ -4,5 +4,6 @@ class VegetablesController < ApplicationController
   end
 
   def show
+    @vegetable = Vegetable.find(params[:id])
   end
 end

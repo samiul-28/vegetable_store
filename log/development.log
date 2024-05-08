@@ -167,3 +167,96 @@ Migrating to CreateVegetables (20240508053622)
   [1m[36mVegetable Create (3.2ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pumpkin"], ["description", "A pumpkin is a cultivated winter squash in the genus Cucurbita"], ["created_at", "2024-05-08 05:42:33.015860"], ["updated_at", "2024-05-08 05:42:33.015860"]]
   [1m[36mTRANSACTION (53.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2024-05-08 11:47:18 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 115.1ms | Allocations: 12354)
+  Rendered layout layouts/application.html.erb (Duration: 422.8ms | Allocations: 62361)
+Completed 200 OK in 500ms (Views: 402.9ms | ActiveRecord: 30.7ms | Allocations: 72250)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 11:47:42 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 39.3ms | Allocations: 3130)
+  Rendered layout layouts/application.html.erb (Duration: 209.6ms | Allocations: 25753)
+Completed 200 OK in 223ms (Views: 200.8ms | ActiveRecord: 14.2ms | Allocations: 27240)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 11:51:20 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 39.8ms | Allocations: 3075)
+  Rendered layout layouts/application.html.erb (Duration: 149.2ms | Allocations: 25503)
+Completed 200 OK in 161ms (Views: 141.0ms | ActiveRecord: 13.9ms | Allocations: 26989)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 11:51:23 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 12.6ms | Allocations: 456)
+  Rendered layout layouts/application.html.erb (Duration: 65.1ms | Allocations: 5240)
+Completed 200 OK in 69ms (Views: 65.7ms | ActiveRecord: 1.5ms | Allocations: 5509)
+
+
+Started GET "/articles/index" for 127.0.0.1 at 2024-05-08 11:51:27 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/articles/index"):
+  
+Started GET "/1" for 127.0.0.1 at 2024-05-08 11:51:29 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+Started GET "/vegetables/index/2" for 127.0.0.1 at 2024-05-08 11:51:52 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/vegetables/index/2"):
+  
+Started GET "/" for 127.0.0.1 at 2024-05-08 11:55:08 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 110.7ms | Allocations: 12381)
+  Rendered layout layouts/application.html.erb (Duration: 420.6ms | Allocations: 61698)
+Completed 200 OK in 493ms (Views: 400.1ms | ActiveRecord: 32.5ms | Allocations: 71587)
+
+
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 11:55:10 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 140)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 4952)
+Completed 200 OK in 153ms (Views: 43.3ms | ActiveRecord: 1.6ms | Allocations: 7977)
+
+
+Started GET "/vegetables/2" for 127.0.0.1 at 2024-05-08 11:55:13 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 12)
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 4801)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 0.8ms | Allocations: 5486)
+
+

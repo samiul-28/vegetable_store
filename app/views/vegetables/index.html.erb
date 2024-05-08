@@ -1,2 +1,12 @@
-<h1>Vegetables#index</h1>
-<p>Find me in app/views/vegetables/index.html.erb</p>
+<h1>Vegetables</h1>
+
+<ul>
+  <% @vegetables.each do |vegetable| %>
+    <li>
+        <a href="/vegetables/<%= vegetable.id %>">
+          <%= vegetable.name %>
+        </a>
+    </li>
+  <% end %>
+</ul>
+
