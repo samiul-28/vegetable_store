@@ -460,3 +460,414 @@ Processing by VegetablesController#show as HTML
 Completed 200 OK in 80ms (Views: 69.4ms | ActiveRecord: 0.6ms | Allocations: 5621)
 
 
+  [1m[35m (291.9ms)[0m  [1m[35mCREATE DATABASE "store_development" ENCODING = 'unicode'[0m
+  [1m[35m (167.6ms)[0m  [1m[35mCREATE DATABASE "store_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "vegetables" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "vegetables" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (19.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240508053622)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-08 09:04:09.531156', '2024-05-08 09:04:09.531160') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4aadb43709c8496bace64a8ea3fab3da43deadec', '2024-05-08 09:04:09.538788', '2024-05-08 09:04:09.538792') RETURNING "key"[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "vegetables" CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "vegetables" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240508053622)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-08 09:04:09.622555', '2024-05-08 09:04:09.622560') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-05-08 09:04:09.627742' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '4aadb43709c8496bace64a8ea3fab3da43deadec', '2024-05-08 09:04:09.631593', '2024-05-08 09:04:09.631598') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (2.0ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Potato"], ["description", "A potato is a vegetable, the Solanum tuberosum."], ["created_at", "2024-05-08 09:04:09.730166"], ["updated_at", "2024-05-08 09:04:09.730166"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (1.9ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pumpkin"], ["description", "A pumpkin is a cultivated winter squash in the genus Cucurbita"], ["created_at", "2024-05-08 09:04:09.735726"], ["updated_at", "2024-05-08 09:04:09.735726"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:04:19 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.7ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 59.5ms | Allocations: 12614)
+  Rendered layout layouts/application.html.erb (Duration: 15320.2ms | Allocations: 166359)
+Completed 200 OK in 15422ms (Views: 15321.9ms | ActiveRecord: 14.8ms | Allocations: 181417)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 15:04:38 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 29.0ms | Allocations: 5406)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 30.8ms | Allocations: 5686)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 10337)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.0ms | Allocations: 10700)
+
+
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 15:04:44 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (0.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 263)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5367)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 0.4ms | Allocations: 8375)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:20:24 +0600
+  
+SyntaxError (/Users/et/Codes/Samiul/vegetable_store/app/controllers/vegetables_controller.rb:55: syntax error, unexpected `end'):
+  
+app/controllers/vegetables_controller.rb:55: syntax error, unexpected `end'
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:22:05 +0600
+  
+SyntaxError (/Users/et/Codes/Samiul/vegetable_store/app/controllers/vegetables_controller.rb:53: syntax error, unexpected `end'):
+  
+app/controllers/vegetables_controller.rb:53: syntax error, unexpected `end'
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:22:11 +0600
+  
+SyntaxError (/Users/et/Codes/Samiul/vegetable_store/app/controllers/vegetables_controller.rb:53: syntax error, unexpected `end'):
+  
+app/controllers/vegetables_controller.rb:53: syntax error, unexpected `end'
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:24:56 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (16.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 5803)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 29020)
+Completed 200 OK in 47ms (Views: 19.7ms | ActiveRecord: 24.7ms | Allocations: 30646)
+
+
+  [1m[36mVegetable Load (0.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateLeafyGreens (20240508093541)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "leafy_greens" ("id" bigserial primary key, "name" character varying, "variety" character varying, "price" decimal, "mfg_date" date, "expiry_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240508093541') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateCommonItems (20240508095352)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "common_items" ("id" bigserial primary key, "name" character varying, "variety" character varying, "details" text, "price" decimal, "mfg_date" date, "expiry_date" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240508095352') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20240508095838)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240508095838') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-05-08 16:32:26 +0600
+  
+NoMethodError (undefined method `reaources' for #<ActionDispatch::Routing::Mapper:0x00000001057c0e60 @set=#<ActionDispatch::Routing::RouteSet:0x000000010519c8b8>, @draw_paths=[#<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionview-7.1.3.2/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/activestorage-7.1.3.2/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actioncable-7.1.3.2/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.1.3.2/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/importmap-rails-2.0.1/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/stimulus-rails-1.3.3/config/routes>, #<Pathname:/Users/et/.gem/ruby/3.2.0/gems/popper_js-2.11.8/config/routes>, #<Pathname:/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/bootstrap-5.3.3/config/routes>, #<Pathname:/Users/et/Codes/Samiul/vegetable_store/config/routes>, #<Pathname:/Users/et/Codes/Samiul/vegetable_store/config/routes>], @scope=#<ActionDispatch::Routing::Mapper::Scope:0x00000001047cb730 @hash={:path_names=>{:new=>"new", :edit=>"edit"}}, @parent=#<ActionDispatch::Routing::Mapper::Scope:0x000000010451f900 @hash=nil, @parent=nil, @scope_level=nil>, @scope_level=nil>, @concerns={}>):
+  
+config/routes.rb:5:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-05-08 16:33:00 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (13.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 5754)
+  Rendered layout layouts/application.html.erb (Duration: 44.4ms | Allocations: 28953)
+Completed 200 OK in 49ms (Views: 27.5ms | ActiveRecord: 18.8ms | Allocations: 30578)
+
+
+Started GET "/common_item/new" for 127.0.0.1 at 2024-05-08 16:33:40 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/common_item/new"):
+  
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:33:49 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 2.1ms | Allocations: 1435)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1676)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 24425)
+Completed 200 OK in 41ms (Views: 26.9ms | ActiveRecord: 6.8ms | Allocations: 28454)
+
+
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:34:01 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 1.8ms | Allocations: 2096)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2336)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2427)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.9ms | Allocations: 11485)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `common_item' for #<ActionView::Base:0x00000000021778>):
+    2:   <div>
+    3:     <%= form.label :name %><br>
+    4:     <%= form.text_field :name %>
+    5:     <% common_item.errors.full_messages_for(:name).each do |message| %>
+    6:       <div><%= message %></div>
+    7:     <% end %>
+    8:   </div>
+  
+app/views/common_items/_form.html.erb:5
+app/views/common_items/_form.html.erb:1
+app/views/common_items/new.html.erb:4
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:39:20 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 2.7ms | Allocations: 2233)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2474)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2566)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.9ms | Allocations: 10266)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `common_item' for #<ActionView::Base:0x00000000026908>):
+    10:   <div>
+    11:     <%= form.label :variety %><br>
+    12:     <%= form.text_field :variety %>
+    13:     <% common_item.errors.full_messages_for(:variety).each do |message| %>
+    14:       <div><%= message %></div>
+    15:     <% end %>
+    16:   </div>
+  
+app/views/common_items/_form.html.erb:13
+app/views/common_items/_form.html.erb:1
+app/views/common_items/new.html.erb:4
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:39:55 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 8.7ms | Allocations: 3180)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3421)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 26169)
+Completed 200 OK in 48ms (Views: 33.8ms | ActiveRecord: 6.4ms | Allocations: 31509)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 16:43:33 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.7ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3277)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 26496)
+Completed 200 OK in 38ms (Views: 31.9ms | ActiveRecord: 3.5ms | Allocations: 28120)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:43:34 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 2.6ms | Allocations: 1390)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1627)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 6278)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 6611)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:44:08 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 2.0ms | Allocations: 1434)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1677)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 24240)
+Completed 200 OK in 39ms (Views: 30.1ms | ActiveRecord: 2.4ms | Allocations: 28238)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 16:44:10 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (26.9ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 5859)
+Completed 200 OK in 40ms (Views: 11.8ms | ActiveRecord: 26.9ms | Allocations: 6220)
+
+
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:44:21 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 1.4ms | Allocations: 1779)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2015)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2106)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.3ms | Allocations: 6616)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `common_item' for #<ActionView::Base:0x00000000035c00>):
+    1: <%= form_with model: common_item do |form| %>
+    2:   <div>
+    3:     <%= form.label :name %><br>
+    4:     <%= form.text_field :name %>
+  
+app/views/common_items/_form.html.erb:1
+app/views/common_items/new.html.erb:4
+Started GET "/" for 127.0.0.1 at 2024-05-08 16:46:17 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 518)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5802)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 6061)
+
+
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-08 16:46:18 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (0.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:51:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 247)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 5354)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 6711)
+
+
+Started GET "/vegetables/2" for 127.0.0.1 at 2024-05-08 16:46:18 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVegetable Load (0.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:51:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5175)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.3ms | Allocations: 5838)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:46:19 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 2.2ms | Allocations: 991)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1054)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5705)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 5966)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:46:22 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 2.2ms | Allocations: 1009)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1072)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5723)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 5983)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:46:23 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 1.7ms | Allocations: 994)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1057)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5708)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 5968)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 16:47:15 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 18.5ms | Allocations: 3661)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 19.6ms | Allocations: 4047)
+  Rendered layout layouts/application.html.erb (Duration: 217.7ms | Allocations: 53120)
+Completed 200 OK in 293ms (Views: 223.9ms | ActiveRecord: 13.5ms | Allocations: 73570)
+
+
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:47:29 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 3.6ms | Allocations: 2147)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2387)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2478)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.9ms | Allocations: 11568)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `common_item' for #<ActionView::Base:0x0000000000d638>):
+    1: <%= form_with model: common_item do |form| %>
+    2:   <div>
+    3:     <%= form.label :name %><br>
+    4:     <%= form.text_field :name %>
+  
+app/views/common_items/_form.html.erb:1
+app/views/common_items/new.html.erb:4
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:47:45 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 1.6ms | Allocations: 1724)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1967)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2059)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.3ms | Allocations: 7363)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `common_items' for #<ActionView::Base:0x00000000012778>):
+    1: <%= form_with model: common_items do |form| %>
+    2:   <div>
+    3:     <%= form.label :name %><br>
+    4:     <%= form.text_field :name %>
+  
+app/views/common_items/_form.html.erb:1
+app/views/common_items/new.html.erb:4
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-08 16:48:01 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 2.1ms | Allocations: 2848)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 3089)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3181)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.5ms | Allocations: 8481)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `common_item' for #<ActionView::Base:0x00000000017868>):
+    2:   <div>
+    3:     <%= form.label :name %><br>
+    4:     <%= form.text_field :name %>
+    5:     <% common_item.errors.full_messages_for(:name).each do |message| %>
+    6:       <div><%= message %></div>
+    7:     <% end %>
+    8:   </div>
+  
+app/views/common_items/_form.html.erb:5
+app/views/common_items/_form.html.erb:1
+app/views/common_items/new.html.erb:4

@@ -1,0 +1,54 @@
+<%= form_with model: common_items do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% common_item.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :variety %><br>
+    <%= form.text_field :variety %>
+    <% common_item.errors.full_messages_for(:variety).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :details %><br>
+    <%= form.text_area :details %>
+    <% common_item.errors.full_messages_for(:details).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.number_field :price %>
+    <% common_item.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :mfg_date %><br>
+    <%= form.date_field :mfg_date %>
+    <% common_item.errors.full_messages_for(:mfg_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :expiry_date %><br>
+    <%= form.date_field :expiry_date %>
+    <% common_item.errors.full_messages_for(:expiry_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

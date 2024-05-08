@@ -10,9 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_08_053622) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_08_095838) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "common_items", force: :cascade do |t|
+    t.string "name"
+    t.string "variety"
+    t.text "details"
+    t.decimal "price"
+    t.date "mfg_date"
+    t.date "expiry_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leafy_greens", force: :cascade do |t|
+    t.string "name"
+    t.string "variety"
+    t.decimal "price"
+    t.date "mfg_date"
+    t.date "expiry_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email_address"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "vegetables", force: :cascade do |t|
     t.string "name"

@@ -4,7 +4,7 @@ class VegetablesController < ApplicationController
   end
 
   def show
-    @vegetable = Vegetable.find(params[:id])
+    find_vegetable
   end
 
   def new
@@ -20,13 +20,13 @@ class VegetablesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
-  def edit
-    @vegetable = Vegetable.find(params[:id])
-  end
-  def update
-    @vegetable = Vegetable.find(params[:id])
 
+  def edit
+    find_vegetable
+  end
+
+  def update
+    find_vegetable
     if @vegetable.update(vegetable_params)
       redirect_to @vegetable
     else
@@ -35,16 +35,24 @@ class VegetablesController < ApplicationController
   end
 
   def destroy
-    @vegetable = Vegetable.find(params[:id])
+    find_vegetable
     @vegetable.destroy
+    redirect_to root_path, status: :see_other
+  end
 
+  def destroy
+    @vegetable.destroy
     redirect_to root_path, status: :see_other
   end
 
   private
-  def vegetable_params
-    params.require(:vegetable).permit(:name, :description)
-  end
+  
+    def find_vegetable
+      @vegetable = Vegetable.find(params[:id])
+    end
+    def vegetable_params
+      params.require(:vegetable).permit(:name, :description)
+    end
 
 
 end
