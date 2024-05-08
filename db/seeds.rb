@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+
+vagetable = Vegetable.create(name: "Potato" , description: "A potato is a vegetable, the Solanum tuberosum.")
+vagetable = Vegetable.create(name: "Pumpkin" , description: "A pumpkin is a cultivated winter squash in the genus Cucurbita")

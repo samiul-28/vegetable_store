@@ -148,3 +148,22 @@ Processing by VegetablesController#index as HTML
 Completed 200 OK in 115ms (Views: 112.2ms | ActiveRecord: 0.0ms | Allocations: 23403)
 
 
+  [1m[35m (42.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (136.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (153.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-08 05:36:40.206014', '2024-05-08 05:36:40.206023') RETURNING "key"[0m
+Migrating to CreateVegetables (20240508053622)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (315.8ms)[0m  [1m[35mCREATE TABLE "vegetables" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240508053622') RETURNING "version"[0m
+  [1m[36mTRANSACTION (27.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (22.0ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Potato"], ["description", "A potato is a vegetable, the Solanum tuberosum."], ["created_at", "2024-05-08 05:42:32.930249"], ["updated_at", "2024-05-08 05:42:32.930249"]]
+  [1m[36mTRANSACTION (56.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (3.2ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pumpkin"], ["description", "A pumpkin is a cultivated winter squash in the genus Cucurbita"], ["created_at", "2024-05-08 05:42:33.015860"], ["updated_at", "2024-05-08 05:42:33.015860"]]
+  [1m[36mTRANSACTION (53.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
