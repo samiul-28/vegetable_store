@@ -460,3 +460,248 @@ Processing by VegetablesController#show as HTML
 Completed 200 OK in 80ms (Views: 69.4ms | ActiveRecord: 0.6ms | Allocations: 5621)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-08 14:42:13 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.7ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 177.3ms | Allocations: 12621)
+  Rendered layout layouts/application.html.erb (Duration: 564.8ms | Allocations: 62993)
+Completed 200 OK in 653ms (Views: 540.8ms | ActiveRecord: 34.8ms | Allocations: 73045)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 14:42:39 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 534)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 5400)
+Completed 200 OK in 56ms (Views: 53.1ms | ActiveRecord: 1.2ms | Allocations: 5669)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 14:42:42 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.7ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 531)
+  Rendered layout layouts/application.html.erb (Duration: 78.6ms | Allocations: 5392)
+Completed 200 OK in 92ms (Views: 88.1ms | ActiveRecord: 1.6ms | Allocations: 5660)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 14:42:48 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 77.0ms | Allocations: 5619)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 80.5ms | Allocations: 5894)
+  Rendered layout layouts/application.html.erb (Duration: 121.2ms | Allocations: 10516)
+Completed 200 OK in 125ms (Views: 122.9ms | ActiveRecord: 0.0ms | Allocations: 10880)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 14:43:32 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 8.3ms | Allocations: 1210)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1454)
+  Rendered layout layouts/application.html.erb (Duration: 125.9ms | Allocations: 24415)
+Completed 200 OK in 174ms (Views: 135.3ms | ActiveRecord: 9.8ms | Allocations: 28459)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 14:43:39 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 760)
+  Rendered layout layouts/application.html.erb (Duration: 47.0ms | Allocations: 5618)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 1.1ms | Allocations: 5981)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 14:45:32 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 8.7ms | Allocations: 1230)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1470)
+  Rendered layout layouts/application.html.erb (Duration: 134.3ms | Allocations: 23937)
+Completed 200 OK in 184ms (Views: 140.8ms | ActiveRecord: 10.5ms | Allocations: 27903)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 14:46:19 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 12.6ms | Allocations: 1221)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 16.3ms | Allocations: 1465)
+  Rendered layout layouts/application.html.erb (Duration: 119.4ms | Allocations: 23714)
+Completed 200 OK in 163ms (Views: 125.6ms | ActiveRecord: 12.2ms | Allocations: 27742)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 14:52:21 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 11.4ms | Allocations: 1230)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1472)
+  Rendered layout layouts/application.html.erb (Duration: 181.0ms | Allocations: 25854)
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 23.4ms | Allocations: 32334)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"articles"}):
+    58:         
+    59:              <li class="nav-item">
+    60:                 <div class="nav-link active">
+    61:                 <%= link_to "Bootly Home", :controller => :articles, :action => :index%>
+    62:               </li>
+  
+app/views/layouts/application.html.erb:61
+Started GET "/" for ::1 at 2024-05-08 14:53:25 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 150.7ms | Allocations: 12622)
+  Rendered layout layouts/application.html.erb (Duration: 457.9ms | Allocations: 63298)
+Completed 500 Internal Server Error in 543ms (ActiveRecord: 30.8ms | Allocations: 73297)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"articles"}):
+    58:         
+    59:              <li class="nav-item">
+    60:                 <div class="nav-link active">
+    61:                 <%= link_to "Bootly Home", :controller => :articles, :action => :index%>
+    62:               </li>
+  
+app/views/layouts/application.html.erb:61
+Started GET "/" for ::1 at 2024-05-08 14:54:03 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 40.3ms | Allocations: 3260)
+  Rendered layout layouts/application.html.erb (Duration: 161.2ms | Allocations: 26189)
+Completed 200 OK in 173ms (Views: 152.8ms | ActiveRecord: 13.9ms | Allocations: 27856)
+
+
+Started GET "/" for ::1 at 2024-05-08 14:54:07 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 54.4ms | Allocations: 6441)
+Completed 200 OK in 58ms (Views: 55.6ms | ActiveRecord: 0.9ms | Allocations: 6710)
+
+
+Started GET "/vegetables/2" for ::1 at 2024-05-08 14:54:09 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 265)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 5165)
+Completed 200 OK in 73ms (Views: 53.9ms | ActiveRecord: 1.6ms | Allocations: 7774)
+
+
+Started GET "/" for ::1 at 2024-05-08 14:54:11 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 531)
+  Rendered layout layouts/application.html.erb (Duration: 53.5ms | Allocations: 5430)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 1.1ms | Allocations: 5699)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:06:24 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 150.0ms | Allocations: 12623)
+  Rendered layout layouts/application.html.erb (Duration: 415.1ms | Allocations: 62514)
+Completed 200 OK in 510ms (Views: 389.3ms | ActiveRecord: 36.5ms | Allocations: 72566)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 15:06:27 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 18.2ms | Allocations: 2039)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 22.0ms | Allocations: 2335)
+  Rendered layout layouts/application.html.erb (Duration: 56.3ms | Allocations: 6957)
+Completed 200 OK in 61ms (Views: 58.3ms | ActiveRecord: 0.0ms | Allocations: 7322)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:11:23 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.9ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 141.7ms | Allocations: 12621)
+  Rendered layout layouts/application.html.erb (Duration: 399.6ms | Allocations: 62516)
+Completed 200 OK in 467ms (Views: 378.9ms | ActiveRecord: 33.3ms | Allocations: 72568)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 15:11:26 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 21.1ms | Allocations: 2033)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 24.7ms | Allocations: 2347)
+  Rendered layout layouts/application.html.erb (Duration: 63.5ms | Allocations: 6969)
+Completed 200 OK in 67ms (Views: 65.3ms | ActiveRecord: 0.0ms | Allocations: 7334)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 15:11:51 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 15.2ms | Allocations: 1234)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 19.7ms | Allocations: 1496)
+  Rendered layout layouts/application.html.erb (Duration: 155.4ms | Allocations: 24456)
+Completed 200 OK in 218ms (Views: 161.5ms | ActiveRecord: 10.4ms | Allocations: 28523)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-08 15:11:59 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:4
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 766)
+  Rendered layout layouts/application.html.erb (Duration: 72.3ms | Allocations: 5630)
+Completed 200 OK in 85ms (Views: 80.4ms | ActiveRecord: 1.2ms | Allocations: 5999)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-08 15:12:01 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 6.9ms | Allocations: 806)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 869)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 5491)
+Completed 200 OK in 51ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 5756)
+
+
