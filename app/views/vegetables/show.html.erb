@@ -1,12 +1,15 @@
-<h1><%= @vegetable.name %></h1>
+<h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
 
-<p><%= @vegetable.description %></p>
-<ul>
-  <li><%= link_to "Edit", edit_vegetable_path(@vegetable) %></li>
+<p class="text-center"><%= @vegetable.description %></p>
 
-  <li><%= link_to "Delete", vegetable_path(@vegetable), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?" } %></li>
+<div class="text-center">
+ 
+    <li><%= link_to "Edit", edit_vegetable_path(@vegetable) %></li>
+
+    <li><%= link_to "Delete", vegetable_path(@vegetable), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?" } %></li>
 
 
-</ul>
+  
+ </div> 

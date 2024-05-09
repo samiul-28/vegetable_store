@@ -1,11 +1,19 @@
-<h1>Vegetables</h1>
-
+<div class="d-grid gap-1 col-4 mx-auto">
+   <h1>Vegetables</h1>
+   <p class="text-decoration-underline fw-bold">Our vegetables name list with details:</p>
+</div>
+<div class="list-group d-grid gap-2 col-4 mx-auto">
 <ul>
   <% @vegetables.each do |vegetable| %>
-    <li>
+    <li class="list-group-item list-group-item-action">
          <%= link_to vegetable.name, vegetable %>
     </li>
   <% end %>
 </ul>
 
-<%= link_to "New Vegetable", new_vegetable_path %>
+<div class="d-grid gap-2 col-4 mx-auto">
+  <button type="button" class="btn btn-outline-primary">
+    <%= link_to "Add New Vegetable", new_vegetable_path %>
+  </button>
+</div>
+
