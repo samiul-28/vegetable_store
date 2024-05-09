@@ -6754,3 +6754,508 @@ Processing by LeafyGreensController#index as HTML
 Completed 200 OK in 71ms (Views: 65.1ms | ActiveRecord: 2.2ms | Allocations: 6367)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:27:26 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.8ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 244.9ms | Allocations: 25953)
+  Rendered layout layouts/application.html.erb (Duration: 510.5ms | Allocations: 77071)
+Completed 200 OK in 587ms (Views: 469.8ms | ActiveRecord: 50.5ms | Allocations: 88035)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:32:15 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (0.9ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.8ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 127.6ms | Allocations: 11966)
+  Rendered layout layouts/application.html.erb (Duration: 246.2ms | Allocations: 35862)
+Completed 200 OK in 264ms (Views: 211.9ms | ActiveRecord: 39.1ms | Allocations: 38382)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:32:24 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (0.8ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (2.1ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 23.8ms | Allocations: 1681)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 6844)
+Completed 200 OK in 65ms (Views: 59.0ms | ActiveRecord: 4.0ms | Allocations: 7138)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:32:25 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 832)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 5999)
+Completed 200 OK in 53ms (Views: 49.3ms | ActiveRecord: 1.4ms | Allocations: 6474)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:32:26 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (0.7ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.9ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 1677)
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | Allocations: 6822)
+Completed 200 OK in 65ms (Views: 60.0ms | ActiveRecord: 2.7ms | Allocations: 7115)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:32:27 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 67.6ms | Allocations: 5821)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 1.2ms | Allocations: 6084)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:32:28 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.4ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 748)
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | Allocations: 5921)
+Completed 200 OK in 68ms (Views: 64.2ms | ActiveRecord: 1.3ms | Allocations: 6402)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:32:29 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 58.9ms | Allocations: 5769)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 1.3ms | Allocations: 6031)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:32:31 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.8ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.0ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 24.7ms | Allocations: 1671)
+  Rendered layout layouts/application.html.erb (Duration: 70.3ms | Allocations: 6828)
+Completed 200 OK in 74ms (Views: 68.7ms | ActiveRecord: 3.9ms | Allocations: 7115)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:33:13 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 30.2ms | Allocations: 3371)
+  Rendered layout layouts/application.html.erb (Duration: 128.9ms | Allocations: 27086)
+Completed 200 OK in 142ms (Views: 123.9ms | ActiveRecord: 10.9ms | Allocations: 28714)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:33:16 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 15.5ms | Allocations: 634)
+  Rendered layout layouts/application.html.erb (Duration: 90.4ms | Allocations: 5983)
+Completed 200 OK in 96ms (Views: 92.2ms | ActiveRecord: 1.5ms | Allocations: 6250)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:33:17 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 37.6ms | Allocations: 4484)
+  Rendered layout layouts/application.html.erb (Duration: 84.1ms | Allocations: 9785)
+Completed 200 OK in 95ms (Views: 77.8ms | ActiveRecord: 11.0ms | Allocations: 10694)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:33:18 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.1ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.8ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 55.3ms | Allocations: 5686)
+  Rendered layout layouts/application.html.erb (Duration: 90.3ms | Allocations: 10866)
+Completed 200 OK in 102ms (Views: 79.9ms | ActiveRecord: 13.9ms | Allocations: 11797)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:33:39 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.0ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.9ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 140.9ms | Allocations: 11900)
+  Rendered layout layouts/application.html.erb (Duration: 272.9ms | Allocations: 35670)
+Completed 200 OK in 298ms (Views: 237.6ms | ActiveRecord: 42.5ms | Allocations: 38184)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:33:46 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.0ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.2ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 22.2ms | Allocations: 1674)
+  Rendered layout layouts/application.html.erb (Duration: 60.2ms | Allocations: 6993)
+Completed 200 OK in 63ms (Views: 58.7ms | ActiveRecord: 3.2ms | Allocations: 7281)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 18:33:46 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.2ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 784)
+  Rendered layout layouts/application.html.erb (Duration: 59.9ms | Allocations: 5948)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 1.1ms | Allocations: 6424)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:33:48 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.9ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.9ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 22.6ms | Allocations: 1671)
+  Rendered layout layouts/application.html.erb (Duration: 66.8ms | Allocations: 6834)
+Completed 200 OK in 71ms (Views: 65.7ms | ActiveRecord: 3.8ms | Allocations: 7121)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:33:50 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 735)
+  Rendered layout layouts/application.html.erb (Duration: 72.1ms | Allocations: 5914)
+Completed 200 OK in 78ms (Views: 74.3ms | ActiveRecord: 1.3ms | Allocations: 6388)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:35:07 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (0.9ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.7ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 139.1ms | Allocations: 11959)
+  Rendered layout layouts/application.html.erb (Duration: 267.5ms | Allocations: 35896)
+Completed 200 OK in 308ms (Views: 225.9ms | ActiveRecord: 49.9ms | Allocations: 38413)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:11 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 826)
+  Rendered layout layouts/application.html.erb (Duration: 51.2ms | Allocations: 5993)
+Completed 200 OK in 56ms (Views: 52.8ms | ActiveRecord: 1.4ms | Allocations: 6467)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:12 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 58.1ms | Allocations: 5790)
+Completed 200 OK in 64ms (Views: 59.8ms | ActiveRecord: 1.4ms | Allocations: 6052)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:35:18 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.8ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 736)
+  Rendered layout layouts/application.html.erb (Duration: 56.8ms | Allocations: 5888)
+Completed 200 OK in 62ms (Views: 58.0ms | ActiveRecord: 1.7ms | Allocations: 6362)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:35:20 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.0ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.0ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 20.5ms | Allocations: 1672)
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 6835)
+Completed 200 OK in 68ms (Views: 63.1ms | ActiveRecord: 3.0ms | Allocations: 7122)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:21 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.3ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 87.5ms | Allocations: 5802)
+Completed 200 OK in 92ms (Views: 89.0ms | ActiveRecord: 1.2ms | Allocations: 6064)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:35:21 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 5734)
+Completed 200 OK in 70ms (Views: 67.4ms | ActiveRecord: 1.2ms | Allocations: 5997)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:35:24 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (8.7ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 84.3ms | Allocations: 5698)
+Completed 200 OK in 90ms (Views: 79.3ms | ActiveRecord: 8.7ms | Allocations: 5961)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:25 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 43.8ms | Allocations: 5815)
+Completed 200 OK in 48ms (Views: 44.8ms | ActiveRecord: 1.1ms | Allocations: 6077)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 18:35:27 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.4ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 782)
+  Rendered layout layouts/application.html.erb (Duration: 49.4ms | Allocations: 5956)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 1.4ms | Allocations: 6430)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:35:28 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.1ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 545)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 5690)
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 1.1ms | Allocations: 5952)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:30 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | Allocations: 5784)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 1.2ms | Allocations: 6046)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:33 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 75.1ms | Allocations: 5778)
+Completed 200 OK in 83ms (Views: 78.1ms | ActiveRecord: 1.6ms | Allocations: 6041)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:35:35 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | Allocations: 5796)
+Completed 200 OK in 71ms (Views: 67.6ms | ActiveRecord: 1.4ms | Allocations: 6056)
+
+
+Started GET "/vegetables/2" for 127.0.0.1 at 2024-05-09 18:36:34 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 309)
+  Rendered layout layouts/application.html.erb (Duration: 129.1ms | Allocations: 24261)
+Completed 200 OK in 222ms (Views: 138.7ms | ActiveRecord: 23.7ms | Allocations: 30596)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:36:35 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 851)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 6008)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 1.1ms | Allocations: 6334)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 18:36:38 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 5787)
+Completed 200 OK in 65ms (Views: 61.2ms | ActiveRecord: 1.3ms | Allocations: 6047)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:36:40 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.5ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 43.9ms | Allocations: 4461)
+  Rendered layout layouts/application.html.erb (Duration: 94.0ms | Allocations: 9644)
+Completed 200 OK in 105ms (Views: 87.0ms | ActiveRecord: 11.7ms | Allocations: 10551)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 18:36:43 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.6ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 546)
+  Rendered layout layouts/application.html.erb (Duration: 60.2ms | Allocations: 5703)
+Completed 200 OK in 65ms (Views: 61.9ms | ActiveRecord: 1.5ms | Allocations: 5963)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 18:36:44 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.5ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 47.5ms | Allocations: 4504)
+  Rendered layout layouts/application.html.erb (Duration: 91.6ms | Allocations: 9687)
+Completed 200 OK in 103ms (Views: 82.5ms | ActiveRecord: 14.0ms | Allocations: 10595)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 18:36:46 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.7ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 12.7ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 5925)
+Completed 200 OK in 82ms (Views: 76.6ms | ActiveRecord: 1.6ms | Allocations: 6187)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:36:51 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.2ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 33.5ms | Allocations: 1963)
+  Rendered layout layouts/application.html.erb (Duration: 75.2ms | Allocations: 7293)
+Completed 200 OK in 84ms (Views: 77.3ms | ActiveRecord: 4.7ms | Allocations: 7791)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 18:37:18 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.9ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (0.9ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (0.9ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 114.8ms | Allocations: 11968)
+  Rendered layout layouts/application.html.erb (Duration: 238.9ms | Allocations: 35720)
+Completed 200 OK in 261ms (Views: 205.2ms | ActiveRecord: 40.6ms | Allocations: 38236)
+
+
