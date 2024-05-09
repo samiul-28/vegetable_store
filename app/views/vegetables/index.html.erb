@@ -4,11 +4,11 @@
 </div>
 <div class="list-group d-grid gap-2 col-4 mx-auto">
 <ul>
-  <% @vegetables.each do |vegetable| %>
+    <% @vegetables.each do |vegetable| %>
     <li class="list-group-item list-group-item-action">
          <%= link_to vegetable.name, vegetable %>
     </li>
-  <% end %>
+    <% end %>
 </ul>
 
 <div class="d-grid gap-2 col-4 mx-auto">

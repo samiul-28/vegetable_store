@@ -1,12 +1,13 @@
-<h1><%= @vegetable.name %></h1>
-
-<p><%= @vegetable.description %></p>
-<ul>
-  <li><%= link_to "Edit", edit_vegetable_path(@vegetable) %></li>
-
-  <li><%= link_to "Delete", vegetable_path(@vegetable), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?" } %></li>
+<p class="text-decoration-underline text-center"><%= @leafy_green.price %><p>
+<p class="text-center"><%= @leafy_green.mfg_date %></p>
+<p class="text-center"><%= @leafy_green.expiry_date %></p>
 
 
-</ul>
+<div class="text-center">
+ 
+    <li><%= link_to "Edit", edit_leafy_green_path(@leafy_green) %></li>
+
+    <li><%= link_to "Delete", leafy_green_path(@leafy_green), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?" } %></li>
+</div> 
