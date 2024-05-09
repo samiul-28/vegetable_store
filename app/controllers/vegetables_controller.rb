@@ -40,13 +40,8 @@ class VegetablesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
-  def destroy
-    @vegetable.destroy
-    redirect_to root_path, status: :see_other
-  end
-
   private
-  
+
     def find_vegetable
       @vegetable = Vegetable.find(params[:id])
     end

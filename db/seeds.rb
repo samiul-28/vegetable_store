@@ -10,5 +10,10 @@
 
 
 
-vagetable = Vegetable.create(name: "Potato" , description: "A potato is a vegetable, the Solanum tuberosum.")
-vagetable = Vegetable.create(name: "Pumpkin" , description: "A pumpkin is a cultivated winter squash in the genus Cucurbita")
+Vegetable.create(name: "Potato" , description: "A potato is a vegetable, the Solanum tuberosum.")
+Vegetable.create(name: "Pumpkin" , description: "A pumpkin is a cultivated winter squash in the genus Cucurbita")
+CommonItem.create(name: "Onion" , variety: "Deshi", details: "Purple onion from Pabna", price: 44.0, mfg_date: "5/3/2024", expiry_date: "5/9/2024")
+CommonItem.create(name: "Ginger" , variety: "Deshi", details: "Yellow ginger from Rangpur", price: 124.0, mfg_date: "5/3/2024", expiry_date: "5/9/2024")
+LeafyGreen.create(name: "Lal Shak" , variety: "Deshi", details: "Amaranth small size editble leaf oriental purple red", price: 12.5, mfg_date: "5/3/2024", expiry_date: "5/4/2024")
+LeafyGreen.create(name: "Palang Shak" , variety: "Deshi", details: "Oriental green spinach", price: 10.0, mfg_date: "5/3/2024", expiry_date: "5/4/2024")
+LeafyGreen.create(name: "Data Shak" , variety: "Deshi", details: "Large Amarnath from Pabna", price: 20.0, mfg_date: "5/3/2024", expiry_date: "5/4/2024")

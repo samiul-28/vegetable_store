@@ -1,14 +1,15 @@
 <h1 class="text-decoration-underline text-center"><%= @common_item.name %></h1>
 
-<p class="text-center"><%= @common_item.details %></p>
-<p class="text-center"><%= @common_item.price %></p>
-<p class="text-center"><%= @common_item.expiry_date %></p>
-<p class="text-center"><%= @common_item.mfg_date %></p>
+<p class="text-center">Details: <%= @common_item.details %></p>
+<p class="text-center">Price: <%= @common_item.price %></p>
+<p class="text-center">Produce of: <%= @common_item.mfg_date %></p>
+<p class="text-center">Expiry Date: <%= @common_item.expiry_date %></p>
+
 <div class="text-center">
  
-    <li><%= link_to "Edit", edit_vegetable_path(@common_item) %></li>
+    <li><%= link_to "Edit", edit_common_item_path(@common_item) %></li>
 
-    <li><%= link_to "Delete", vegetable_path(@common_item), data: {
+    <li><%= link_to "Delete", common_item_path(@common_item), data: {
                       turbo_method: :delete,
                       turbo_confirm: "Are you sure?" } %></li>
 </div>

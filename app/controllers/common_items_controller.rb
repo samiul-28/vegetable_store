@@ -36,12 +36,9 @@ class CommonItemsController < ApplicationController
 
   def destroy
     find_common_item
-    @common_item.destroy
-    redirect_to root_path, status: :see_other
-  end
-
-  def destroy
-    @common_item.destroy
+    if @common_item.present?
+      @common_item.destroy
+    end 
     redirect_to root_path, status: :see_other
   end
 
@@ -51,6 +48,6 @@ class CommonItemsController < ApplicationController
       @common_item = CommonItem.find(params[:id])
     end
     def common_item_params
-      params.require(:common_item).permit(:name, :description)
+      params.require(:common_item).permit(:name, :variety, :details, :price, :mfg_date, :expiry_date)
     end
 end
