@@ -6143,3 +6143,614 @@ Processing by VegetablesController#index as TURBO_STREAM
 Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 6082)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:37:36 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20240509100309_add_details_to_leafy_greens.rb
+
+
+):
+  
+activerecord (7.1.3.2) lib/active_record/migration.rb:755:in `check_pending_migrations'
+activerecord (7.1.3.2) lib/active_record/migration.rb:644:in `block (2 levels) in call'
+activesupport (7.1.3.2) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.1.3.2) lib/active_record/migration.rb:649:in `block in call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:641:in `synchronize'
+activerecord (7.1.3.2) lib/active_record/migration.rb:641:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+  [1m[35m (33.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (8.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddDetailsToLeafyGreens (20240509100309)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (104.1ms)[0m  [1m[35mALTER TABLE "leafy_greens" ADD "details" text[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240509100309') RETURNING "version"[0m
+  [1m[36mTRANSACTION (33.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:38:29 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (4.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 192.4ms | Allocations: 12754)
+  Rendered layout layouts/application.html.erb (Duration: 569.2ms | Allocations: 69072)
+Completed 200 OK in 707ms (Views: 531.1ms | ActiveRecord: 48.7ms | Allocations: 79128)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 16:38:35 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (2.8ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 777)
+  Rendered layout layouts/application.html.erb (Duration: 67.3ms | Allocations: 5877)
+Completed 200 OK in 86ms (Views: 73.5ms | ActiveRecord: 2.8ms | Allocations: 6800)
+
+
+Started GET "/vegetables/6" for 127.0.0.1 at 2024-05-09 16:38:37 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 267)
+  Rendered layout layouts/application.html.erb (Duration: 78.4ms | Allocations: 5517)
+Completed 200 OK in 99ms (Views: 80.9ms | ActiveRecord: 1.1ms | Allocations: 8142)
+
+
+Started DELETE "/vegetables/6?_method=delete" for 127.0.0.1 at 2024-05-09 16:38:40 +0600
+Processing by VegetablesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vegetables_controller.rb:39:in `destroy'
+  [1m[36mVegetable Destroy (12.9ms)[0m  [1m[31mDELETE FROM "vegetables" WHERE "vegetables"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/vegetables_controller.rb:39:in `destroy'
+  [1m[36mTRANSACTION (36.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vegetables_controller.rb:39:in `destroy'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 80ms (ActiveRecord: 50.8ms | Allocations: 2394)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:38:41 +0600
+Processing by VegetablesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (3.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 12.7ms | Allocations: 597)
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 5687)
+Completed 200 OK in 81ms (Views: 75.9ms | ActiveRecord: 3.0ms | Allocations: 5996)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:38:42 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (3.1ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 720)
+  Rendered layout layouts/application.html.erb (Duration: 57.0ms | Allocations: 5806)
+Completed 200 OK in 68ms (Views: 57.7ms | ActiveRecord: 3.0ms | Allocations: 6728)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 16:38:42 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.2ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 451)
+  Rendered layout layouts/application.html.erb (Duration: 43.5ms | Allocations: 5541)
+Completed 200 OK in 49ms (Views: 45.3ms | ActiveRecord: 1.1ms | Allocations: 5804)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-09 16:38:45 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 23.9ms | Allocations: 2042)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 28.4ms | Allocations: 2330)
+  Rendered layout layouts/application.html.erb (Duration: 68.6ms | Allocations: 7175)
+Completed 200 OK in 74ms (Views: 71.0ms | ActiveRecord: 0.0ms | Allocations: 7531)
+
+
+Started POST "/vegetables" for 127.0.0.1 at 2024-05-09 16:38:52 +0600
+Processing by VegetablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vegetable"=>{"name"=>"uyfkgg", "description"=>"dkyttkuyykiyhkgli"}, "commit"=>"Create Vegetable"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/vegetables_controller.rb:17:in `create'
+  [1m[36mVegetable Create (95.8ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "uyfkgg"], ["description", "dkyttkuyykiyhkgli"], ["created_at", "2024-05-09 10:38:52.235232"], ["updated_at", "2024-05-09 10:38:52.235232"]]
+  ↳ app/controllers/vegetables_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (29.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/vegetables_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/vegetables/8
+Completed 302 Found in 151ms (ActiveRecord: 125.0ms | Allocations: 3230)
+
+
+Started GET "/vegetables/8" for 127.0.0.1 at 2024-05-09 16:38:52 +0600
+Processing by VegetablesController#show as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mVegetable Load (0.9ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 5163)
+Completed 200 OK in 55ms (Views: 46.4ms | ActiveRecord: 0.9ms | Allocations: 5838)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:38:55 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.1ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 56.9ms | Allocations: 5720)
+Completed 200 OK in 63ms (Views: 59.0ms | ActiveRecord: 2.1ms | Allocations: 5982)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 16:38:56 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 58.7ms | Allocations: 5522)
+Completed 200 OK in 62ms (Views: 59.5ms | ActiveRecord: 1.2ms | Allocations: 5784)
+
+
+Started GET "/common_items/new" for 127.0.0.1 at 2024-05-09 16:38:58 +0600
+Processing by CommonItemsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/new.html.erb within layouts/application
+  Rendered common_items/_form.html.erb (Duration: 97.9ms | Allocations: 6355)
+  Rendered common_items/new.html.erb within layouts/application (Duration: 102.1ms | Allocations: 6605)
+  Rendered layout layouts/application.html.erb (Duration: 155.0ms | Allocations: 11639)
+Completed 200 OK in 274ms (Views: 163.4ms | ActiveRecord: 11.7ms | Allocations: 20175)
+
+
+Started POST "/common_items" for 127.0.0.1 at 2024-05-09 16:39:31 +0600
+Processing by CommonItemsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "common_item"=>{"name"=>"ghggg", "variety"=>"ghghg", "details"=>"gghghggh", "price"=>"67.0", "mfg_date"=>"2024-05-08", "expiry_date"=>"2024-05-22"}, "commit"=>"Create Common item"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/common_items_controller.rb:17:in `create'
+  [1m[36mCommonItem Create (83.3ms)[0m  [1m[32mINSERT INTO "common_items" ("name", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "ghggg"], ["variety", "ghghg"], ["details", "gghghggh"], ["price", "67.0"], ["mfg_date", "2024-05-08"], ["expiry_date", "2024-05-22"], ["created_at", "2024-05-09 10:39:31.865650"], ["updated_at", "2024-05-09 10:39:31.865650"]]
+  ↳ app/controllers/common_items_controller.rb:17:in `create'
+  [1m[36mTRANSACTION (53.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/common_items_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/common_items/1
+Completed 302 Found in 163ms (ActiveRecord: 137.2ms | Allocations: 2353)
+
+
+Started GET "/common_items/1" for 127.0.0.1 at 2024-05-09 16:39:32 +0600
+Processing by CommonItemsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mCommonItem Load (1.0ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items" WHERE "common_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/common_items_controller.rb:48:in `find_common_item'
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/show.html.erb within layouts/application
+  Rendered common_items/show.html.erb within layouts/application (Duration: 10.7ms | Allocations: 328)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 5460)
+Completed 200 OK in 71ms (Views: 58.3ms | ActiveRecord: 0.9ms | Allocations: 6830)
+
+
+Started DELETE "/common_items/1?_method=delete" for 127.0.0.1 at 2024-05-09 16:39:37 +0600
+Processing by CommonItemsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mCommonItem Load (0.8ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items" WHERE "common_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/common_items_controller.rb:48:in `find_common_item'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/common_items_controller.rb:40:in `destroy'
+  [1m[36mCommonItem Destroy (8.1ms)[0m  [1m[31mDELETE FROM "common_items" WHERE "common_items"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/common_items_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/common_items_controller.rb:40:in `destroy'
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 71ms (ActiveRecord: 49.0ms | Allocations: 2048)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:39:37 +0600
+Processing by VegetablesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.2ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 61.4ms | Allocations: 5714)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 1.2ms | Allocations: 5979)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:39:39 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.0ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 453)
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 5532)
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 1.0ms | Allocations: 5794)
+
+
+Started GET "/leafy_greens/new" for 127.0.0.1 at 2024-05-09 16:39:41 +0600
+Processing by LeafyGreensController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 16.6ms | Allocations: 1526)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1776)
+  Rendered layout layouts/application.html.erb (Duration: 71.8ms | Allocations: 6621)
+Completed 200 OK in 121ms (Views: 74.3ms | ActiveRecord: 10.4ms | Allocations: 10658)
+
+
+Started GET "/leafy_greens/new" for 127.0.0.1 at 2024-05-09 16:39:41 +0600
+Processing by LeafyGreensController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 11.9ms | Allocations: 986)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1049)
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | Allocations: 5894)
+Completed 200 OK in 67ms (Views: 64.0ms | ActiveRecord: 0.0ms | Allocations: 6162)
+
+
+Started POST "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:39:56 +0600
+Processing by LeafyGreensController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"8787", "mfg_date"=>"2024-05-03", "expiry_date"=>"2024-05-15"}, "commit"=>"Create Leafy green"}
+[31mUnpermitted parameters: :price, :mfg_date, :expiry_date. Context: { controller: LeafyGreensController, action: create, request: #<ActionDispatch::Request:0x00007b5fa4343b70>, params: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"8787", "mfg_date"=>"2024-05-03", "expiry_date"=>"2024-05-15"}, "commit"=>"Create Leafy green", "controller"=>"leafy_greens", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 30.5ms | Allocations: 3126)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 32.4ms | Allocations: 3232)
+  Rendered layout layouts/application.html.erb (Duration: 93.6ms | Allocations: 8073)
+Completed 422 Unprocessable Entity in 108ms (Views: 97.2ms | ActiveRecord: 0.0ms | Allocations: 9416)
+
+
+Started POST "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:40:17 +0600
+Processing by LeafyGreensController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"777", "mfg_date"=>"2024-05-07", "expiry_date"=>"2024-05-01"}, "commit"=>"Create Leafy green"}
+[31mUnpermitted parameters: :price, :mfg_date, :expiry_date. Context: { controller: LeafyGreensController, action: create, request: #<ActionDispatch::Request:0x00007b5f9d4ca3d8>, params: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"777", "mfg_date"=>"2024-05-07", "expiry_date"=>"2024-05-01"}, "commit"=>"Create Leafy green", "controller"=>"leafy_greens", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 31.5ms | Allocations: 3004)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 33.1ms | Allocations: 3067)
+  Rendered layout layouts/application.html.erb (Duration: 92.1ms | Allocations: 7908)
+Completed 422 Unprocessable Entity in 104ms (Views: 94.4ms | ActiveRecord: 0.0ms | Allocations: 9097)
+
+
+Started POST "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:40:20 +0600
+Processing by LeafyGreensController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"", "mfg_date"=>"", "expiry_date"=>""}, "commit"=>"Create Leafy green"}
+[31mUnpermitted parameters: :price, :mfg_date, :expiry_date. Context: { controller: LeafyGreensController, action: create, request: #<ActionDispatch::Request:0x00007b5f9d45e4d0>, params: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"", "mfg_date"=>"", "expiry_date"=>""}, "commit"=>"Create Leafy green", "controller"=>"leafy_greens", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 36.3ms | Allocations: 3004)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 38.1ms | Allocations: 3068)
+  Rendered layout layouts/application.html.erb (Duration: 116.8ms | Allocations: 8086)
+Completed 422 Unprocessable Entity in 131ms (Views: 120.5ms | ActiveRecord: 0.0ms | Allocations: 9294)
+
+
+Started POST "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:40:21 +0600
+Processing by LeafyGreensController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"", "mfg_date"=>"", "expiry_date"=>""}, "commit"=>"Create Leafy green"}
+[31mUnpermitted parameters: :price, :mfg_date, :expiry_date. Context: { controller: LeafyGreensController, action: create, request: #<ActionDispatch::Request:0x00007b5fa401b4c0>, params: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"", "mfg_date"=>"", "expiry_date"=>""}, "commit"=>"Create Leafy green", "controller"=>"leafy_greens", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 33.3ms | Allocations: 3004)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 36.3ms | Allocations: 3067)
+  Rendered layout layouts/application.html.erb (Duration: 110.7ms | Allocations: 7978)
+Completed 422 Unprocessable Entity in 126ms (Views: 116.3ms | ActiveRecord: 0.0ms | Allocations: 9167)
+
+
+Started POST "/leafy_greens" for 127.0.0.1 at 2024-05-09 16:40:23 +0600
+Processing by LeafyGreensController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"", "mfg_date"=>"", "expiry_date"=>""}, "commit"=>"Create Leafy green"}
+[31mUnpermitted parameters: :price, :mfg_date, :expiry_date. Context: { controller: LeafyGreensController, action: create, request: #<ActionDispatch::Request:0x00007b5f9d6a4c58>, params: {"authenticity_token"=>"[FILTERED]", "leafy_green"=>{"price"=>"", "mfg_date"=>"", "expiry_date"=>""}, "commit"=>"Create Leafy green", "controller"=>"leafy_greens", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/new.html.erb within layouts/application
+  Rendered leafy_greens/_form.html.erb (Duration: 30.4ms | Allocations: 3004)
+  Rendered leafy_greens/new.html.erb within layouts/application (Duration: 32.0ms | Allocations: 3067)
+  Rendered layout layouts/application.html.erb (Duration: 90.7ms | Allocations: 7909)
+Completed 422 Unprocessable Entity in 103ms (Views: 93.5ms | ActiveRecord: 0.0ms | Allocations: 9105)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:40:26 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.7ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 62.5ms | Allocations: 5726)
+Completed 200 OK in 68ms (Views: 64.1ms | ActiveRecord: 1.6ms | Allocations: 5988)
+
+
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE DATABASE "store_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "store_test" ENCODING = 'unicode'[0m
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:46:24 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 184)
+  Rendered layout layouts/application.html.erb (Duration: 332.1ms | Allocations: 51081)
+Completed 200 OK in 419ms (Views: 345.8ms | ActiveRecord: 0.0ms | Allocations: 61080)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 16:49:19 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1659)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 1785)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.0ms | Allocations: 11730)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     5: </div>
+     6: <div class="list-group d-grid gap-2 col-4 mx-auto">
+     7: <ul>
+     8:     <% @vegetables.each do |vegetable| %>
+     9:     <li class="list-group-item list-group-item-action">
+    10:          <%= link_to vegetable.name, vegetable %>
+    11:     </li>
+  
+app/views/home/index.html.erb:8
+Started GET "/" for 127.0.0.1 at 2024-05-09 17:02:14 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 183.9ms | Allocations: 12726)
+  Rendered layout layouts/application.html.erb (Duration: 454.7ms | Allocations: 63588)
+Completed 200 OK in 559ms (Views: 422.8ms | ActiveRecord: 42.8ms | Allocations: 74552)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-09 17:03:48 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (4.8ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.6ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 72.2ms | Allocations: 4493)
+  Rendered layout layouts/application.html.erb (Duration: 206.0ms | Allocations: 28313)
+Completed 200 OK in 237ms (Views: 190.3ms | ActiveRecord: 23.9ms | Allocations: 30833)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 17:04:12 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.4ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 654)
+  Rendered layout layouts/application.html.erb (Duration: 64.3ms | Allocations: 5769)
+Completed 200 OK in 71ms (Views: 66.6ms | ActiveRecord: 1.3ms | Allocations: 6251)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-09 17:04:14 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.1ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 650)
+  Rendered layout layouts/application.html.erb (Duration: 56.0ms | Allocations: 5743)
+Completed 200 OK in 62ms (Views: 59.1ms | ActiveRecord: 1.0ms | Allocations: 6226)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 17:04:16 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (1.3ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 450)
+  Rendered layout layouts/application.html.erb (Duration: 50.5ms | Allocations: 5536)
+Completed 200 OK in 54ms (Views: 51.5ms | ActiveRecord: 1.2ms | Allocations: 5798)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-09 17:04:18 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 55.2ms | Allocations: 5925)
+Completed 200 OK in 62ms (Views: 58.0ms | ActiveRecord: 1.3ms | Allocations: 6406)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (9.3ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Potato"], ["description", "A potato is a vegetable, the Solanum tuberosum."], ["created_at", "2024-05-09 11:04:36.630875"], ["updated_at", "2024-05-09 11:04:36.630875"]]
+  [1m[36mTRANSACTION (36.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (17.7ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pumpkin"], ["description", "A pumpkin is a cultivated winter squash in the genus Cucurbita"], ["created_at", "2024-05-09 11:04:36.682987"], ["updated_at", "2024-05-09 11:04:36.682987"]]
+  [1m[36mTRANSACTION (34.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommonItem Create (2.9ms)[0m  [1m[32mINSERT INTO "common_items" ("name", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Onion"], ["variety", "Deshi"], ["details", "Purple onion from Pabna"], ["price", "44.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-09-05"], ["created_at", "2024-05-09 11:04:36.780315"], ["updated_at", "2024-05-09 11:04:36.780315"]]
+  [1m[36mTRANSACTION (43.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommonItem Create (3.1ms)[0m  [1m[32mINSERT INTO "common_items" ("name", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Ginger"], ["variety", "Deshi"], ["details", "Yellow ginger from Rangpur"], ["price", "124.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-09-05"], ["created_at", "2024-05-09 11:04:36.832230"], ["updated_at", "2024-05-09 11:04:36.832230"]]
+  [1m[36mTRANSACTION (27.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLeafyGreen Create (13.9ms)[0m  [1m[32mINSERT INTO "leafy_greens" ("name", "variety", "price", "mfg_date", "expiry_date", "created_at", "updated_at", "details") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Lal Shak"], ["variety", "Deshi"], ["price", "12.5"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-09 11:04:36.900311"], ["updated_at", "2024-05-09 11:04:36.900311"], ["details", "Amaranth small size editble leaf oriental purple red"]]
+  [1m[36mTRANSACTION (53.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLeafyGreen Create (4.8ms)[0m  [1m[32mINSERT INTO "leafy_greens" ("name", "variety", "price", "mfg_date", "expiry_date", "created_at", "updated_at", "details") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Palang Shak"], ["variety", "Deshi"], ["price", "10.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-09 11:04:36.974070"], ["updated_at", "2024-05-09 11:04:36.974070"], ["details", "Oriental green spinach"]]
+  [1m[36mTRANSACTION (24.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLeafyGreen Create (3.0ms)[0m  [1m[32mINSERT INTO "leafy_greens" ("name", "variety", "price", "mfg_date", "expiry_date", "created_at", "updated_at", "details") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Data Shak"], ["variety", "Deshi"], ["price", "20.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-09 11:04:37.009561"], ["updated_at", "2024-05-09 11:04:37.009561"], ["details", "Large Amarnath from Pabna"]]
+  [1m[36mTRANSACTION (26.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-05-09 17:04:50 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mVegetable Load (2.4ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables"[0m
+  ↳ app/views/home/index.html.erb:3
+  [1m[36mLeafyGreen Load (1.7ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/home/index.html.erb:12
+  [1m[36mCommonItem Load (1.6ms)[0m  [1m[34mSELECT "common_items".* FROM "common_items"[0m
+  ↳ app/views/home/index.html.erb:20
+  Rendered home/index.html.erb within layouts/application (Duration: 284.6ms | Allocations: 26025)
+  Rendered layout layouts/application.html.erb (Duration: 623.2ms | Allocations: 76607)
+Completed 200 OK in 713ms (Views: 571.0ms | ActiveRecord: 65.4ms | Allocations: 87571)
+
+
+Started GET "/vegetables/9" for 127.0.0.1 at 2024-05-09 17:04:58 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mVegetable Load (1.5ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 274)
+  Rendered layout layouts/application.html.erb (Duration: 57.3ms | Allocations: 5399)
+Completed 200 OK in 92ms (Views: 64.0ms | ActiveRecord: 1.8ms | Allocations: 8174)
+
+
+Started GET "/vegetables/9" for 127.0.0.1 at 2024-05-09 17:05:02 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mVegetable Load (0.7ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 5177)
+Completed 200 OK in 52ms (Views: 44.8ms | ActiveRecord: 0.6ms | Allocations: 5862)
+
+
+Started GET "/vegetables/10" for 127.0.0.1 at 2024-05-09 17:05:02 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 5366)
+Completed 200 OK in 56ms (Views: 48.5ms | ActiveRecord: 0.8ms | Allocations: 6052)
+
+
+Started GET "/vegetables/10" for 127.0.0.1 at 2024-05-09 17:05:04 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 5189)
+Completed 200 OK in 59ms (Views: 48.6ms | ActiveRecord: 0.8ms | Allocations: 5873)
+
+
+Started GET "/vegetables/2" for 127.0.0.1 at 2024-05-09 17:05:05 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 5174)
+Completed 200 OK in 49ms (Views: 41.1ms | ActiveRecord: 0.8ms | Allocations: 5846)
+
+
+Started GET "/vegetables/2" for 127.0.0.1 at 2024-05-09 17:05:18 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 5177)
+Completed 200 OK in 52ms (Views: 45.3ms | ActiveRecord: 0.8ms | Allocations: 5848)
+
+
+Started GET "/vegetables/1" for 127.0.0.1 at 2024-05-09 17:05:18 +0600
+Processing by VegetablesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVegetable Load (0.6ms)[0m  [1m[34mSELECT "vegetables".* FROM "vegetables" WHERE "vegetables"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vegetables_controller.rb:46:in `find_vegetable'
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/show.html.erb within layouts/application
+  Rendered vegetables/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 83)
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 5169)
+Completed 200 OK in 53ms (Views: 43.7ms | ActiveRecord: 0.5ms | Allocations: 5840)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-09 17:05:51 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (2.2ms)[0m  [1m[34mSELECT "leafy_greens".* FROM "leafy_greens"[0m
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 790)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 5892)
+Completed 200 OK in 71ms (Views: 65.1ms | ActiveRecord: 2.2ms | Allocations: 6367)
+
+

@@ -1,0 +1,25 @@
+   <h1>Vegetables</h1>
+    <ul>
+        <% @vegetables.each do |vegetable| %>
+        <li>
+            <%= link_to vegetable.name, vegetable %>
+        </li>
+        <% end%>
+    </ul>
+
+    <h1>Leafy Greens</h1>
+    <ul>
+        <% @leafy_greens.each do |vegetable| %>
+        <li>
+            <%= link_to vegetable.name, vegetable %>
+        </li>
+        <% end%>
+    </ul>
+    <h1>Common Items</h1>
+    <ul>
+        <% @common_items.each do |vegetable| %>
+        <li>
+            <%= link_to vegetable.name, vegetable %>
+        </li>
+        <% end%>
+    </ul>

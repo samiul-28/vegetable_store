@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "vegetables#index"
+  
+  root "home#index"
+  resources :home
   resources :vegetables
   resources :leafy_greens
   resources :common_items
