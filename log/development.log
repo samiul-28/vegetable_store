@@ -9047,3 +9047,33 @@ Processing by CommonItemsController#index as HTML
 Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 1.3ms | Allocations: 6398)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (6.0ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at", "price", "mfg_date", "expiry_date") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Potato"], ["description", "A potato is a vegetable, the Solanum tuberosum"], ["created_at", "2024-05-11 06:06:09.328672"], ["updated_at", "2024-05-11 06:06:09.328672"], ["price", "55.0"], ["mfg_date", "2024-01-05"], ["expiry_date", "2024-01-06"]]
+  [1m[36mTRANSACTION (23.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (5.9ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at", "price", "mfg_date", "expiry_date") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Pumpkin"], ["description", "A pumpkin is a cultivated winter squash in the genus Cucurbita"], ["created_at", "2024-05-11 06:06:09.370005"], ["updated_at", "2024-05-11 06:06:09.370005"], ["price", "60.0"], ["mfg_date", "2024-10-05"], ["expiry_date", "2024-10-06"]]
+  [1m[36mTRANSACTION (32.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommonItem Create (4.5ms)[0m  [1m[32mINSERT INTO "common_items" ("name", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Onion"], ["variety", "Deshi"], ["details", "Purple onion from Pabna"], ["price", "44.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-09-05"], ["created_at", "2024-05-11 06:06:09.467156"], ["updated_at", "2024-05-11 06:06:09.467156"]]
+  [1m[36mTRANSACTION (27.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCommonItem Create (4.8ms)[0m  [1m[32mINSERT INTO "common_items" ("name", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Ginger"], ["variety", "Deshi"], ["details", "Yellow ginger from Rangpur"], ["price", "124.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-09-05"], ["created_at", "2024-05-11 06:06:09.507633"], ["updated_at", "2024-05-11 06:06:09.507633"]]
+  [1m[36mTRANSACTION (33.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLeafyGreen Create (13.4ms)[0m  [1m[32mINSERT INTO "leafy_greens" ("name", "variety", "price", "mfg_date", "expiry_date", "created_at", "updated_at", "details") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Lal Shak"], ["variety", "Deshi"], ["price", "12.5"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-11 06:06:09.611651"], ["updated_at", "2024-05-11 06:06:09.611651"], ["details", "Amaranth small size editble leaf oriental purple red"]]
+  [1m[36mTRANSACTION (42.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLeafyGreen Create (19.4ms)[0m  [1m[32mINSERT INTO "leafy_greens" ("name", "variety", "price", "mfg_date", "expiry_date", "created_at", "updated_at", "details") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Palang Shak"], ["variety", "Deshi"], ["price", "10.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-11 06:06:09.680003"], ["updated_at", "2024-05-11 06:06:09.680003"], ["details", "Oriental green spinach"]]
+  [1m[36mTRANSACTION (48.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLeafyGreen Create (5.5ms)[0m  [1m[32mINSERT INTO "leafy_greens" ("name", "variety", "price", "mfg_date", "expiry_date", "created_at", "updated_at", "details") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Data Shak"], ["variety", "Deshi"], ["price", "20.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-11 06:06:09.758533"], ["updated_at", "2024-05-11 06:06:09.758533"], ["details", "Large Amarnath from Pabna"]]
+  [1m[36mTRANSACTION (22.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVegetable Create (6.1ms)[0m  [1m[32mINSERT INTO "vegetables" ("name", "description", "created_at", "updated_at", "price", "mfg_date", "expiry_date") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Brinjal"], ["description", "Brinjal is composed of fat, vitamins"], ["created_at", "2024-05-11 06:06:09.797608"], ["updated_at", "2024-05-11 06:06:09.797608"], ["price", "50.0"], ["mfg_date", "2024-02-05"], ["expiry_date", "2024-02-06"]]
+  [1m[36mTRANSACTION (28.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
