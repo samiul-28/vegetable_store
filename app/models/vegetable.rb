@@ -1,4 +1,4 @@
 class Vegetable < ApplicationRecord
-    validates :name, presence: true
-    validates :description, presence: true, length: { minimum: 10 }
+    validates :name, :description, :price, :mfg_date, :expiry_date, presence: true
+    
 end

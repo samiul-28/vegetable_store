@@ -27,8 +27,53 @@
         </div>
     </div>
 
+    <div class= "row mb-3">
+        <div class="col-sm-4 col-form-label">
+          <%= form.label :price %><br>
+        </div>
+        <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.number_field :price %>
+            <% vegetable.errors.full_messages_for(:price).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div> 
+        </div> 
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-4 col-form-label">
+        <%= form.label :mfg_date %><br>
+      </div>
+      <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.date_field :mfg_date %>
+            <% vegetable.errors.full_messages_for(:mfg_date).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+      </div>
+  </div>
+
+  <div class="row mb-3">
+      <div class="col-sm-4 col-form-label">
+        <%= form.label :expiry_date %><br>
+      </div>
+      <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.date_field :expiry_date %>
+            <% vegetable.errors.full_messages_for(:expiry_date).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+      </div>
+  </div>
+  
+
+
   <div class="col-auto">
     <%= form.submit class:"btn btn-primary" %>
-    <% end %>
+    
   </div>
+<% end %>  
 

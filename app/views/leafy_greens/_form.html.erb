@@ -1,4 +1,33 @@
 <%= form_with model: @leafy_green do |form| %>
+  <div class="row mb-3">
+      <div class="col-sm-4 col-form-label">
+        <%= form.label :name %><br>
+      </div>
+      <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.text_field :name %>
+            <% leafy_green.errors.full_messages_for(:name).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
+      </div>
+  </div>
+
+  <div class="row mb-3">
+        <div class="col-sm-4 col-form-label">
+          <%= form.label :details %><br>
+        </div>
+        <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.text_area :details %>
+            <% leafy_green.errors.full_messages_for(:details).each do |message| %>
+                <div><%= message %></div>
+            <% end %>
+          </div>
+        </div>
+  </div>
+
+
   <div class= "row mb-3">
         <div class="col-sm-4 col-form-label">
           <%= form.label :price %><br>
