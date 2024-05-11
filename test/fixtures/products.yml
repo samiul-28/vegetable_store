@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  variety: MyString
+  details: MyText
+  price: 9.99
+  mfg_date: 2024-05-11
+  expiry_date: 2024-05-11
+
+two:
+  name: MyString
+  type: 
+  variety: MyString
+  details: MyText
+  price: 9.99
+  mfg_date: 2024-05-11
+  expiry_date: 2024-05-11
