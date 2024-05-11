@@ -46,7 +46,7 @@ class VegetablesController < ApplicationController
       @vegetable = Vegetable.find(params[:id])
     end
     def vegetable_params
-      params.require(:vegetable).permit(:name, :description)
+      params.require(:vegetable).permit(:name, :description, :price, :mfg_date, :expiry_date)
     end
 
 

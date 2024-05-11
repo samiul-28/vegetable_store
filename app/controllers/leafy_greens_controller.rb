@@ -46,6 +46,6 @@ class LeafyGreensController < ApplicationController
       @leafy_green = LeafyGreen.find(params[:id])
     end
     def leafy_green_params
-      params.require(:leafy_green).permit(:name, :description)
+      params.require(:leafy_green).permit(:name, :details, :price,  :mfg_date, :expiry_date)
     end
 end
