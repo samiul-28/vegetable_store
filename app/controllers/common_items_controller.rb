@@ -48,6 +48,6 @@ class CommonItemsController < ApplicationController
       @common_item = CommonItem.find(params[:id])
     end
     def common_item_params
-      params.require(:common_item).permit(:name, :variety, :details, :price, :mfg_date, :expiry_date)
+      params.require(:common_item).permit(:name, :variety, :details, :price, :mfg_date, :expiry_date, :type)
     end
 end

@@ -10174,3 +10174,584 @@ Processing by CommonItemsController#index as HTML
 Completed 200 OK in 218ms (Views: 141.6ms | ActiveRecord: 16.7ms | Allocations: 86023)
 
 
+Started GET "/" for ::1 at 2024-05-12 09:23:51 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/home/index.html.erb:13
+  [1m[36mVegetable Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/home/index.html.erb:37
+  [1m[36mLeafyGreen Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 17.3ms | Allocations: 2967)
+  Rendered layout layouts/application.html.erb (Duration: 449.8ms | Allocations: 59807)
+Completed 200 OK in 573ms (Views: 457.5ms | ActiveRecord: 19.6ms | Allocations: 75228)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-12 09:23:56 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 731)
+  Rendered layout layouts/application.html.erb (Duration: 76.7ms | Allocations: 5856)
+Completed 200 OK in 85ms (Views: 80.2ms | ActiveRecord: 1.0ms | Allocations: 6363)
+
+
+Started GET "/vegetables/new" for 127.0.0.1 at 2024-05-12 09:23:57 +0600
+Processing by VegetablesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/new.html.erb within layouts/application
+  Rendered vegetables/_form.html.erb (Duration: 49.4ms | Allocations: 3527)
+  Rendered vegetables/new.html.erb within layouts/application (Duration: 61.7ms | Allocations: 3817)
+  Rendered layout layouts/application.html.erb (Duration: 112.8ms | Allocations: 8918)
+Completed 200 OK in 301ms (Views: 114.5ms | ActiveRecord: 11.6ms | Allocations: 26958)
+
+
+Started POST "/vegetables" for 127.0.0.1 at 2024-05-12 09:25:15 +0600
+Processing by VegetablesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "vegetable"=>{"name"=>"Bean", "description"=>"vgggggggggggggggggggg", "price"=>"70.0", "mfg_date"=>"2024-02-02", "expiry_date"=>"2024-05-31"}, "commit"=>"Create Vegetable"}
+[31mUnpermitted parameters: :price, :mfg_date, :expiry_date. Context: { controller: VegetablesController, action: create, request: #<ActionDispatch::Request:0x00007f10ca1a33f8>, params: {"authenticity_token"=>"[FILTERED]", "vegetable"=>{"name"=>"Bean", "description"=>"vgggggggggggggggggggg", "price"=>"70.0", "mfg_date"=>"2024-02-02", "expiry_date"=>"2024-05-31"}, "commit"=>"Create Vegetable", "controller"=>"vegetables", "action"=>"create"} }[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 1108)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'description' for Vegetable.):
+  
+app/controllers/vegetables_controller.rb:15:in `create'
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-12 09:25:45 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 502)
+  Rendered layout layouts/application.html.erb (Duration: 57.1ms | Allocations: 5787)
+Completed 200 OK in 64ms (Views: 60.7ms | ActiveRecord: 0.8ms | Allocations: 6075)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-12 09:25:45 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 501)
+  Rendered layout layouts/application.html.erb (Duration: 79.1ms | Allocations: 5600)
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.8ms | Allocations: 5884)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-12 09:25:48 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 501)
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 5602)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.4ms | Allocations: 5888)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-12 09:25:50 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 507)
+  Rendered layout layouts/application.html.erb (Duration: 74.9ms | Allocations: 5614)
+Completed 200 OK in 80ms (Views: 77.2ms | ActiveRecord: 0.5ms | Allocations: 5900)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-12 09:25:50 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 702)
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 5813)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.5ms | Allocations: 6319)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-12 09:25:52 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 697)
+  Rendered layout layouts/application.html.erb (Duration: 53.8ms | Allocations: 5805)
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 0.6ms | Allocations: 6304)
+
+
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE DATABASE "store_development" ENCODING = 'unicode'[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE DATABASE "store_test" ENCODING = 'unicode'[0m
+  [1m[36mVegetable Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1 /* loading for pp */ LIMIT $2[0m  [["type", "Vegetable"], ["LIMIT", 11]]
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1 /* loading for pp */ LIMIT $2[0m  [["type", "Vegetable"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2024-05-12 10:50:19 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1844)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1981)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 9.6ms | Allocations: 19088)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+    <div class="row g-3">
+            <div class="col-md-4 col-6">
+                
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div>
+            </div>    
+    </div>
+</div>
+            
+):
+1:    <div class="container">
+2:        <div class="row g-3">
+3:                <div class="col-md-4 col-6">
+4:                    
+5:                    <div class="card" style="width: 22rem;">
+6:                        <div class="card-body">
+7:                            <h1>Common Items</h1>
+8:                            <h5 class="card-title"></h5>
+9:                            <p class="card-text">Some common item here!</p>
+10:                        </div>
+11:                            <ul class="list-group list-group-flush">
+12:                                <ol>
+13:                                    <% @common_items.each do |common_item %>
+14:                                    <li>
+15:                                        <%= link_to common_item.name, common_item %>
+16:                                    </li>
+17:                                    <% end%>
+18:                                </ol>
+19:                            </ul>
+20:                            <div class="d-grid gap-2 col-4 mx-auto">
+21:                                <button type="button" class="btn btn-outline-primary">
+22:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+23:                                </button>
+24:                            </div>
+25:                    </div> 
+26:                </div>
+27:    
+28:                <div class="col-md-4 col-6">
+29:                    <div class="card" style="width: 22rem;">
+30:                        <div class="card-body">
+31:                             <h1>Vegetables</h1>
+32:                               <h5 class="card-title"></h5>
+33:                             <p class="card-text">Some item of vegetables here!</p>
+34:                        </div>
+35:                            <ul class="list-group list-group-flush">
+36:                                <ol>
+37:                                  <% @vegetables.each do |vegetable| %>
+38:                                <li>
+39:                                    <%= link_to vegetable.name, vegetable %>
+40:                                </li>
+41:                                <% end%>
+42:                                </ol>
+43:                            </ul>
+44:                            <div class="d-grid gap-2 col-4 mx-auto">
+45:                                <button type="button" class="btn btn-outline-primary">
+46:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+47:                                </button>
+48:                            </div>
+49:                    </div> 
+50:                </div>
+51:    
+52:                <div class="col-md-4 col-6">
+53:                    <div class="card" style="width: 22rem;">
+54:                        <div class="card-body">
+55:                            <h1>Leafy Greens</h1>
+56:                            <h5 class="card-title"></h5>
+57:                            <p class="card-text">Some item of Leafy Greens!</p>
+58:                        </div>
+59:                            <ul class="list-group list-group-flush">
+60:                                <ol>
+61:                                    <% @leafy_greens.each do |leafy_green| %>
+62:                                    <li>
+63:                                        <%= link_to leafy_green.name, leafy_green %>
+64:                                    </li>
+65:                                    <% end%>
+66:                                </ol>
+67:                            </ul>
+68:                            <div class="d-grid gap-2 col-4 mx-auto">
+69:                                <button type="button" class="btn btn-outline-primary">
+70:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+71:                                </button>
+72:                            </div>
+73:                    </div>
+74:                </div>    
+75:        </div>
+76:    </div>
+77:                
+  
+app/views/home/index.html.erb:14: syntax error, unexpected instance variable, expecting '|'
+app/views/home/index.html.erb:79: syntax error, unexpected `end'
+Started GET "/" for 127.0.0.1 at 2024-05-12 11:00:42 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1306)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1409)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 6.5ms | Allocations: 8288)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+    <div class="row g-3">
+            <div class="col-md-4 col-6">
+                
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div>
+            </div>    
+    </div>
+</div>
+            
+):
+1:    <div class="container">
+2:        <div class="row g-3">
+3:                <div class="col-md-4 col-6">
+4:                    
+5:                    <div class="card" style="width: 22rem;">
+6:                        <div class="card-body">
+7:                            <h1>Common Items</h1>
+8:                            <h5 class="card-title"></h5>
+9:                            <p class="card-text">Some common item here!</p>
+10:                        </div>
+11:                            <ul class="list-group list-group-flush">
+12:                                <ol>
+13:                                    <% @common_items.each do |common_item %>
+14:                                    <li>
+15:                                        <%= link_to common_item.name, common_item %>
+16:                                    </li>
+17:                                    <% end%>
+18:                                </ol>
+19:                            </ul>
+20:                            <div class="d-grid gap-2 col-4 mx-auto">
+21:                                <button type="button" class="btn btn-outline-primary">
+22:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+23:                                </button>
+24:                            </div>
+25:                    </div> 
+26:                </div>
+27:    
+28:                <div class="col-md-4 col-6">
+29:                    <div class="card" style="width: 22rem;">
+30:                        <div class="card-body">
+31:                             <h1>Vegetables</h1>
+32:                               <h5 class="card-title"></h5>
+33:                             <p class="card-text">Some item of vegetables here!</p>
+34:                        </div>
+35:                            <ul class="list-group list-group-flush">
+36:                                <ol>
+37:                                  <% @vegetables.each do |vegetable| %>
+38:                                <li>
+39:                                    <%= link_to vegetable.name, vegetable %>
+40:                                </li>
+41:                                <% end%>
+42:                                </ol>
+43:                            </ul>
+44:                            <div class="d-grid gap-2 col-4 mx-auto">
+45:                                <button type="button" class="btn btn-outline-primary">
+46:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+47:                                </button>
+48:                            </div>
+49:                    </div> 
+50:                </div>
+51:    
+52:                <div class="col-md-4 col-6">
+53:                    <div class="card" style="width: 22rem;">
+54:                        <div class="card-body">
+55:                            <h1>Leafy Greens</h1>
+56:                            <h5 class="card-title"></h5>
+57:                            <p class="card-text">Some item of Leafy Greens!</p>
+58:                        </div>
+59:                            <ul class="list-group list-group-flush">
+60:                                <ol>
+61:                                    <% @leafy_greens.each do |leafy_green| %>
+62:                                    <li>
+63:                                        <%= link_to leafy_green.name, leafy_green %>
+64:                                    </li>
+65:                                    <% end%>
+66:                                </ol>
+67:                            </ul>
+68:                            <div class="d-grid gap-2 col-4 mx-auto">
+69:                                <button type="button" class="btn btn-outline-primary">
+70:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+71:                                </button>
+72:                            </div>
+73:                    </div>
+74:                </div>    
+75:        </div>
+76:    </div>
+77:                
+  
+app/views/home/index.html.erb:14: syntax error, unexpected instance variable, expecting '|'
+app/views/home/index.html.erb:79: syntax error, unexpected `end'
+Started GET "/" for 127.0.0.1 at 2024-05-12 11:03:38 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/home/index.html.erb:13
+  [1m[36mVegetable Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/home/index.html.erb:37
+  [1m[36mLeafyGreen Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2808)
+  Rendered layout layouts/application.html.erb (Duration: 123.2ms | Allocations: 52310)
+Completed 200 OK in 145ms (Views: 125.6ms | ActiveRecord: 5.5ms | Allocations: 56813)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-12 11:03:50 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/home/index.html.erb:13
+  [1m[36mVegetable Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/home/index.html.erb:37
+  [1m[36mLeafyGreen Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1402)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 6514)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 1.2ms | Allocations: 6885)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-12 11:03:52 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/home/index.html.erb:13
+  [1m[36mVegetable Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/home/index.html.erb:37
+  [1m[36mLeafyGreen Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 22.7ms | Allocations: 1397)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 6704)
+Completed 200 OK in 38ms (Views: 35.4ms | ActiveRecord: 1.7ms | Allocations: 7067)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-12 11:03:52 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/home/index.html.erb:13
+  [1m[36mVegetable Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/home/index.html.erb:37
+  [1m[36mLeafyGreen Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 34.2ms | Allocations: 1402)
+  Rendered layout layouts/application.html.erb (Duration: 75.8ms | Allocations: 6711)
+Completed 200 OK in 87ms (Views: 81.6ms | ActiveRecord: 1.9ms | Allocations: 7079)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-12 11:03:52 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 718)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 5838)
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 0.4ms | Allocations: 6338)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-05-12 11:03:54 +0600
+Processing by VegetablesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering vegetables/index.html.erb within layouts/application
+  [1m[36mVegetable Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/vegetables/index.html.erb:7
+  Rendered vegetables/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 704)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 5797)
+Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 0.4ms | Allocations: 6304)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-05-12 11:03:54 +0600
+Processing by LeafyGreensController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leafy_greens/index.html.erb within layouts/application
+  [1m[36mLeafyGreen Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/leafy_greens/index.html.erb:7
+  Rendered leafy_greens/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 695)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 5797)
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 0.5ms | Allocations: 6297)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-12 11:03:55 +0600
+Processing by CommonItemsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering common_items/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/common_items/index.html.erb:7
+  Rendered common_items/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 501)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 5596)
+Completed 200 OK in 45ms (Views: 43.4ms | ActiveRecord: 0.5ms | Allocations: 5883)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-12 11:03:56 +0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCommonItem Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "CommonItem"]]
+  ↳ app/views/home/index.html.erb:13
+  [1m[36mVegetable Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "Vegetable"]]
+  ↳ app/views/home/index.html.erb:37
+  [1m[36mLeafyGreen Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."type" = $1[0m  [["type", "LeafyGreen"]]
+  ↳ app/views/home/index.html.erb:61
+  Rendered home/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 1395)
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 6516)
+Completed 200 OK in 64ms (Views: 59.3ms | ActiveRecord: 1.7ms | Allocations: 6878)
+
+
