@@ -26,7 +26,19 @@
           </div>
         </div>
   </div>
-
+  <div class= "row mb-3">
+        <div class="col-sm-4 col-form-label">
+          <%= form.label :variety %><br>
+        </div>
+        <div class="col-sm-9">
+          <div class="row form-control">
+            <%= form.text_field :variety %>
+            <% leafy_green.errors.full_messages_for(:variety).each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div> 
+       </div> 
+  </div>
 
   <div class= "row mb-3">
         <div class="col-sm-4 col-form-label">
@@ -69,7 +81,9 @@
           </div>
       </div>
   </div>
-  
+
+        <% form.label :type %>
+        <% form.text_field :type %>
 
 
   <div class="col-auto">

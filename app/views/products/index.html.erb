@@ -1,41 +1,75 @@
 <div class="container">
-    <div class="row g-3">
-        <div class="col-md-4 col-6">
-            
-            <div class="card" style="width: 22rem;">
-                <div class="card-body">
-                    <h1>Common_items</h1>
-                    <h5 class="card-title"></h5>
-                    <p class="card-text">Some common_itemes here!</p>
-                </div>
-                <div>
-                    <ul class="list-group list-group-flush">
-                        <ol>
-                            <% @products.where("type = 'common_items'").each do |common_items| %>
-                            <% byebug %>
-                            <li>
-                                <%= link_to common_item.name, common_item %>
-                            </li>
-                            <% end%>
-                        </ol>
-                    </ul>
-                </div>
-                <div class="d-grid gap-2 col-4 mx-auto">
-                    <button type="button" class="btn btn-outline-primary">
-                    <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
-                    </button>
-                </div>
-
-                
-
-
-
-
-
-
-
-            </div> 
+    <div class="row">
+        <div class="col">
+            <div class = "row" >
+                <h3>All Vegetables</h3>
+                 <% vegetable_counter = 0 %>
+                  <% @products.where("type = 'Vegetable'").each do |vegetable| %>
+                   <% vegetable_counter += 1%>
+                    <div class="col align-self-start card" style="width: 22rem;">
+                        <div class="card-body">
+                            <h3 class="card-title text-decoration-underline text-center"><%= vegetable.name %></h3>
+                            <p class="text-center">
+                            Desc: <%= vegetable.details %><br>
+                            Price: <%= vegetable.price %><br>
+                            Produce of: <%= vegetable.mfg_date %><br>
+                            Expiry Date: <%= vegetable.expiry_date %></p>
+                            <div class="text-center">
+                                <%= link_to "Edit", edit_vegetable_path(vegetable) %>
+                                <%= link_to "Delete", vegetable_path(vegetable), data: {
+                                                turbo_method: :delete,
+                                                turbo_confirm: "Are you sure?" } %>
+                            </div>
+                        </div>
+                    </div>
+                    <% break if vegetable_counter > 2 %>
+                  <% end %>
+            </div>
+            <hr>
+            <div class = "row" >
+                <h3>All Leafy Greens</h3>
+                  <% @products.where("type = 'LeafyGreen'").each do |item| %>
+                    <div class="col align-self-start card" style="width: 22rem;">
+                        <div class="card-body">
+                            <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
+                            <p class="text-center">
+                            Desc: <%= item.details %><br>
+                            Price: <%= item.price %><br>
+                            Produce of: <%= item.mfg_date %><br>
+                            Expiry Date: <%= item.expiry_date %></p>
+                            <div class="text-center">
+                                <%= link_to "Edit", edit_leafy_green_path(item) %>
+                                <%= link_to "Delete", leafy_green_path(item), data: {
+                                                turbo_method: :delete,
+                                                turbo_confirm: "Are you sure?" } %>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+            </div>
+            <hr>
+            <div class = "row" >
+                <h3>All Common Items</h3>
+                  <% @products.where("type = 'CommonItem'").each do |item| %>
+                    <div class="col align-self-start card" style="width: 22rem;">
+                        <div class="card-body">
+                            <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
+                            <p class="text-center">
+                            Desc: <%= item.details %><br>
+                            Price: <%= item.price %><br>
+                            Produce of: <%= item.mfg_date %><br>
+                            Expiry Date: <%= item.expiry_date %></p>
+                           <div class="text-center">
+ 
+                            <li><%= link_to "Edit", edit_common_item_path(item) %></li>
+                            <li><%= link_to "Delete", common_item_path(item), data: {
+                                                            turbo_method: :delete,
+                                                            turbo_confirm: "Are you sure?" } %></li>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+            </div>
         </div> 
     </div>
 </div>
-            
