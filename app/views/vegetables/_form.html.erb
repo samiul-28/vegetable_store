@@ -68,8 +68,11 @@
           </div>
       </div>
   </div>
-  
 
+
+  <%= form.fields_for :image do |img| %>
+  <%= render "image_attributes" %>
+  <% end %>
 
   <div class="col-auto">
     <%= form.submit class:"btn btn-primary" %>

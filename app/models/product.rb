@@ -5,4 +5,9 @@ class Product < ApplicationRecord
 
   validates :name, :type, :price, :mfg_date, :expiry_date, presence: true
 
+  has_one :supplier
+  has_many :image
+
+  accepts_nested_attributes_for :supplier, :image
+
 end
