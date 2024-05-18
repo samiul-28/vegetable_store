@@ -13358,3 +13358,1094 @@ Processing by VegetablesController#new as HTML
 Completed 200 OK in 77ms (Views: 51.4ms | ActiveRecord: 5.9ms | Allocations: 39316)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35mSQL (6.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (32.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "images" CASCADE[0m
+  [1m[35m (33.7ms)[0m  [1m[35mCREATE TABLE "images" ("id" bigserial primary key, "name" character varying, "copywright" character varying, "alt_text" character varying, "details" text, "url" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_images_on_product_id" ON "images" ("product_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying NOT NULL, "type" character varying NOT NULL, "variety" character varying, "details" text, "price" decimal NOT NULL, "mfg_date" date NOT NULL, "expiry_date" date NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "suppliers" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "suppliers" ("id" bigserial primary key, "name" character varying, "address" character varying, "tin_number" character varying, "phone_number" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_suppliers_on_product_id" ON "suppliers" ("product_id")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mALTER TABLE "images" ADD CONSTRAINT "fk_rails_bd36e75ae4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "suppliers" ADD CONSTRAINT "fk_rails_0993597590"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Update (2.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'dd6ab15c2b40ad8dc9a4be874e06ce80942a21b4', "updated_at" = '2024-05-18 08:58:10.691032' WHERE "ar_internal_metadata"."key" = 'schema_sha1'[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "images" CASCADE[0m
+  [1m[35m (30.2ms)[0m  [1m[35mCREATE TABLE "images" ("id" bigserial primary key, "name" character varying, "copywright" character varying, "alt_text" character varying, "details" text, "url" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_images_on_product_id" ON "images" ("product_id")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying NOT NULL, "type" character varying NOT NULL, "variety" character varying, "details" text, "price" decimal NOT NULL, "mfg_date" date NOT NULL, "expiry_date" date NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "suppliers" CASCADE[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "suppliers" ("id" bigserial primary key, "name" character varying, "address" character varying, "tin_number" character varying, "phone_number" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_suppliers_on_product_id" ON "suppliers" ("product_id")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mALTER TABLE "images" ADD CONSTRAINT "fk_rails_bd36e75ae4"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "suppliers" ADD CONSTRAINT "fk_rails_0993597590"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240513100132)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240513095948);[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (1.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'development', "updated_at" = '2024-05-18 08:58:10.872205' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-05-18 08:58:10.875850' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'dd6ab15c2b40ad8dc9a4be874e06ce80942a21b4', "updated_at" = '2024-05-18 08:58:10.877661' WHERE "ar_internal_metadata"."key" = 'schema_sha1'[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to Removingstiaddingscope (20240518090559)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "images" DROP CONSTRAINT "fk_rails_bd36e75ae4"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "suppliers" DROP CONSTRAINT "fk_rails_0993597590"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" RENAME COLUMN "type" TO "category"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240518090559') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (72.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "store_development"[0m
+  [1m[35m (64.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "store_test"[0m
+  [1m[35m (241.4ms)[0m  [1m[35mCREATE DATABASE "store_development" ENCODING = 'unicode'[0m
+  [1m[35m (121.1ms)[0m  [1m[35mCREATE DATABASE "store_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "images" CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "images" ("id" bigserial primary key, "name" character varying, "copywright" character varying, "alt_text" character varying, "details" text, "url" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_images_on_product_id" ON "images" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying NOT NULL, "category" character varying NOT NULL, "variety" character varying, "details" text, "price" decimal NOT NULL, "mfg_date" date NOT NULL, "expiry_date" date NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "suppliers" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "suppliers" ("id" bigserial primary key, "name" character varying, "address" character varying, "tin_number" character varying, "phone_number" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_suppliers_on_product_id" ON "suppliers" ("product_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240518090559)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240513100132),
+(20240513095948),
+(20240511104517),
+(20240508095838);[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-18 09:18:53.172765', '2024-05-18 09:18:53.172768') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '8fd5bf5daf111e6a56cc3098c1503958935a7166', '2024-05-18 09:18:53.177077', '2024-05-18 09:18:53.177079') RETURNING "key"[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "images" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "images" ("id" bigserial primary key, "name" character varying, "copywright" character varying, "alt_text" character varying, "details" text, "url" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE INDEX "index_images_on_product_id" ON "images" ("product_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "name" character varying NOT NULL, "category" character varying NOT NULL, "variety" character varying, "details" text, "price" decimal NOT NULL, "mfg_date" date NOT NULL, "expiry_date" date NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "suppliers" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "suppliers" ("id" bigserial primary key, "name" character varying, "address" character varying, "tin_number" character varying, "phone_number" character varying, "product_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_suppliers_on_product_id" ON "suppliers" ("product_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email_address" character varying, "type" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240518090559)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240513100132),
+(20240513095948),
+(20240511104517),
+(20240508095838);[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-18 09:18:53.285092', '2024-05-18 09:18:53.285096') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2024-05-18 09:18:53.290530' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '8fd5bf5daf111e6a56cc3098c1503958935a7166', '2024-05-18 09:18:53.294550', '2024-05-18 09:18:53.294553') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (3.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Potato"], ["category", "vegetable"], ["variety", nil], ["details", "A potato is a vegetable, the Solanum tuberosum"], ["price", "55.0"], ["mfg_date", "2024-01-05"], ["expiry_date", "2024-01-06"], ["created_at", "2024-05-18 09:18:53.446574"], ["updated_at", "2024-05-18 09:18:53.446574"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (34.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Onion"], ["category", "common_item"], ["variety", "Deshi"], ["details", "Purple onion from Pabna"], ["price", "44.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-09-05"], ["created_at", "2024-05-18 09:18:53.460305"], ["updated_at", "2024-05-18 09:18:53.460305"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Ginger"], ["category", "common_item"], ["variety", "Deshi"], ["details", "Yellow ginger from Rangpur"], ["price", "124.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-09-05"], ["created_at", "2024-05-18 09:18:53.499002"], ["updated_at", "2024-05-18 09:18:53.499002"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Lal Shak"], ["category", "leafy_green"], ["variety", "Deshi"], ["details", "Amaranth small size editble leaf oriental purple red"], ["price", "12.5"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-18 09:18:53.503491"], ["updated_at", "2024-05-18 09:18:53.503491"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (2.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Palang Shak"], ["category", "leafy_green"], ["variety", "Deshi"], ["details", "Oriental green spinach"], ["price", "10.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-18 09:18:53.507412"], ["updated_at", "2024-05-18 09:18:53.507412"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Data Shak"], ["category", "leafy_green"], ["variety", "Deshi"], ["details", "Large Amarnath from Pabna"], ["price", "20.0"], ["mfg_date", "2024-03-05"], ["expiry_date", "2024-04-05"], ["created_at", "2024-05-18 09:18:53.515025"], ["updated_at", "2024-05-18 09:18:53.515025"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Brinjal"], ["category", "vegetable"], ["variety", nil], ["details", "Brinjal is composed of fat, vitamins"], ["price", "50.0"], ["mfg_date", "2024-02-05"], ["expiry_date", "2024-02-06"], ["created_at", "2024-05-18 09:18:53.519761"], ["updated_at", "2024-05-18 09:18:53.519761"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "vegetable"], ["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (17.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "beet root"], ["category", "vegetable"], ["variety", "imported"], ["details", "Belgian beet root"], ["price", "400.0"], ["mfg_date", -2024], ["expiry_date", -2004], ["created_at", "2024-05-18 09:42:26.123280"], ["updated_at", "2024-05-18 09:42:26.123280"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "category", "variety", "details", "price", "mfg_date", "expiry_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "beet root"], ["category", "vegetable"], ["variety", "imported"], ["details", "Belgian beet root"], ["price", "400.0"], ["mfg_date", "2024-05-05"], ["expiry_date", "2024-05-25"], ["created_at", "2024-05-18 09:44:20.418768"], ["updated_at", "2024-05-18 09:44:20.418768"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2024-05-18 15:46:45 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (type = 'Vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 6064)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 6190)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 8.2ms | Allocations: 18216)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ERROR:  column "type" does not exist
+LINE 1: SELECT "products".* FROM "products" WHERE (type = 'Vegetable...
+                                                   ^
+):
+    4:             <div class = "row" >
+    5:                 <h3>All Vegetables</h3>
+    6:                  <% vegetable_counter = 0 %>
+    7:                   <% @products.where("type = 'Vegetable'").each do |vegetable| %>
+    8:                    <% vegetable_counter += 1%>
+    9:                     <div class="col align-self-start card" style="width: 22rem;">
+   10:                         <div class="card-body">
+  
+Started GET "/" for ::1 at 2024-05-18 15:47:45 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'Vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'LeafyGreen')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'CommonItem')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2170)
+  Rendered layout layouts/application.html.erb (Duration: 227.0ms | Allocations: 53332)
+Completed 500 Internal Server Error in 236ms (ActiveRecord: 2.3ms | Allocations: 55854)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"common_items"}):
+    23:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    24:           <li class="nav-item">
+    25:             <div class="nav-link active">
+    26:              <%= link_to "Common item ", :controller => :common_items, :action => :index%>
+    27:           </li>
+    28:           <li class="nav-item">
+    29:             <div class="nav-link active">
+  
+app/views/layouts/application.html.erb:26
+Started GET "/" for ::1 at 2024-05-18 15:49:40 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'Vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'LeafyGreen')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'CommonItem')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1987)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 26599)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.9ms | Allocations: 29119)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"common_items"}):
+    23:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    24:           <li class="nav-item">
+    25:             <div class="nav-link active">
+    26:              <%= link_to "Common item ", :controller => :common_items, :action => :index%>
+    27:           </li>
+    28:           <li class="nav-item">
+    29:             <div class="nav-link active">
+  
+app/views/layouts/application.html.erb:26
+Started GET "/" for ::1 at 2024-05-18 15:50:26 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'Vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'LeafyGreen')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'CommonItem')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1986)
+  Rendered layout layouts/application.html.erb (Duration: 23.9ms | Allocations: 26603)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.0ms | Allocations: 29123)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"common_items"}):
+    23:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    24:           <li class="nav-item">
+    25:             <div class="nav-link active">
+    26:              <%= link_to "Common item ", :controller => :common_items, :action => :index%>
+    27:           </li>
+    28:           <li class="nav-item">
+    29:             <div class="nav-link active">
+  
+app/views/layouts/application.html.erb:26
+Started GET "/" for ::1 at 2024-05-18 15:52:16 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'Vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'LeafyGreen')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'CommonItem')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1990)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 25858)
+Completed 200 OK in 38ms (Views: 31.6ms | ActiveRecord: 0.8ms | Allocations: 28446)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-18 15:52:24 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/" for ::1 at 2024-05-18 15:52:26 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'Vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'LeafyGreen')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'CommonItem')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1281)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 6575)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.9ms | Allocations: 6835)
+
+
+Started GET "/common_items" for ::1 at 2024-05-18 15:52:27 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/" for ::1 at 2024-05-18 15:53:36 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 30.7ms | Allocations: 16543)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 16635)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 6.3ms | Allocations: 19157)
+
+
+  
+ActionView::Template::Error (undefined method `edit_producct_path' for #<ActionView::Base:0x00000000024e78>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_producct_path(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 15:56:52 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1528)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1619)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms | Allocations: 1859)
+
+
+  
+ActionView::Template::Error (undefined method `edit_producct_path' for #<ActionView::Base:0x00000000025198>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_producct_path(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:21:16 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (17.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 4327)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 4418)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 26.6ms | Allocations: 4658)
+
+
+  
+ActionView::Template::Error (undefined method `edit_producct_path' for #<ActionView::Base:0x000000000254b8>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_producct_path(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:23:55 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2124)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2258)
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.0ms | Allocations: 14228)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class = "row" >
+                <h3>All Vegetables</h3>
+                 <% vegetable_counter = 0 %>
+                  <% @products.where("category = 'vegetable'").each do |vegetable| %>
+                   <% vegetable_counter += 1%>
+                    <div class="col align-self-start card" style="width: 22rem;">
+                        <div class="card-body">
+                            <h3 class="card-title text-decoration-underline text-center"><%= vegetable.name %></h3>
+                            <p class="text-center">
+                            Desc: <%= vegetable.details %><br>
+                            Price: <%= vegetable.price %><br>
+                            Produce of: <%= vegetable.mfg_date %><br>
+                            Expiry Date: <%= vegetable.expiry_date %></p>
+                            <div class="text-center">
+                                <%= link_to "Edit", edit_producct(vegetable) %>
+                                <%= link_to "Delete", product_path(vegetable), data: {
+                                                turbo_method: :delete
+                                                turbo_confirm: "Are you sure?" } %>
+                            </div>
+                        </div>
+                    </div>
+                    <% break if vegetable_counter > 2 %>
+                  <% end %>
+            </div>
+            <hr>
+            <div class = "row" >
+                <h3>All Leafy Greens</h3>
+                  <% @products.where("category = 'leafy_green'").each do |item| %>
+                    <div class="col align-self-start card" style="width: 22rem;">
+                        <div class="card-body">
+                            <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
+                            <p class="text-center">
+                            Desc: <%= item.details %><br>
+                            Price: <%= item.price %><br>
+                            Produce of: <%= item.mfg_date %><br>
+                            Expiry Date: <%= item.expiry_date %></p>
+                            <div class="text-center">
+                                <%= link_to "Edit", edit_product_path(item) %>
+                                <%= link_to "Delete", product_path(item), data: {
+                                                turbo_method: :delete,
+                                                turbo_confirm: "Are you sure?" } %>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+            </div>
+            <hr>
+            <div class = "row" >
+                <h3>All Common Items</h3>
+                  <% @products.where("category = 'common_item'").each do |item| %>
+                    <div class="col align-self-start card" style="width: 22rem;">
+                        <div class="card-body">
+                            <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
+                            <p class="text-center">
+                            Desc: <%= item.details %><br>
+                            Price: <%= item.price %><br>
+                            Produce of: <%= item.mfg_date %><br>
+                            Expiry Date: <%= item.expiry_date %></p>
+                           <div class="text-center">
+ 
+                            <li><%= link_to "Edit", edit_product_path(item) %></li>
+                            <li><%= link_to "Delete", product_path(item), data: {
+                                                            turbo_method: :delete,
+                                                            turbo_confirm: "Are you sure?" } %></li>
+                            </div>
+                        </div>
+                    </div>
+                  <% end %>
+            </div>
+        </div> 
+    </div>
+</div>
+):
+1:    <div class="container">
+2:        <div class="row">
+3:            <div class="col">
+4:                <div class = "row" >
+5:                    <h3>All Vegetables</h3>
+6:                     <% vegetable_counter = 0 %>
+7:                      <% @products.where("category = 'vegetable'").each do |vegetable| %>
+8:                       <% vegetable_counter += 1%>
+9:                        <div class="col align-self-start card" style="width: 22rem;">
+10:                            <div class="card-body">
+11:                                <h3 class="card-title text-decoration-underline text-center"><%= vegetable.name %></h3>
+12:                                <p class="text-center">
+13:                                Desc: <%= vegetable.details %><br>
+14:                                Price: <%= vegetable.price %><br>
+15:                                Produce of: <%= vegetable.mfg_date %><br>
+16:                                Expiry Date: <%= vegetable.expiry_date %></p>
+17:                                <div class="text-center">
+18:                                    <%= link_to "Edit", edit_producct(vegetable) %>
+19:                                    <%= link_to "Delete", product_path(vegetable), data: {
+20:                                                    turbo_method: :delete
+21:                                                    turbo_confirm: "Are you sure?" } %>
+22:                                </div>
+23:                            </div>
+24:                        </div>
+25:                        <% break if vegetable_counter > 2 %>
+26:                      <% end %>
+27:                </div>
+28:                <hr>
+29:                <div class = "row" >
+30:                    <h3>All Leafy Greens</h3>
+31:                      <% @products.where("category = 'leafy_green'").each do |item| %>
+32:                        <div class="col align-self-start card" style="width: 22rem;">
+33:                            <div class="card-body">
+34:                                <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
+35:                                <p class="text-center">
+36:                                Desc: <%= item.details %><br>
+37:                                Price: <%= item.price %><br>
+38:                                Produce of: <%= item.mfg_date %><br>
+39:                                Expiry Date: <%= item.expiry_date %></p>
+40:                                <div class="text-center">
+41:                                    <%= link_to "Edit", edit_product_path(item) %>
+42:                                    <%= link_to "Delete", product_path(item), data: {
+43:                                                    turbo_method: :delete,
+44:                                                    turbo_confirm: "Are you sure?" } %>
+45:                                </div>
+46:                            </div>
+47:                        </div>
+48:                      <% end %>
+49:                </div>
+50:                <hr>
+51:                <div class = "row" >
+52:                    <h3>All Common Items</h3>
+53:                      <% @products.where("category = 'common_item'").each do |item| %>
+54:                        <div class="col align-self-start card" style="width: 22rem;">
+55:                            <div class="card-body">
+56:                                <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
+57:                                <p class="text-center">
+58:                                Desc: <%= item.details %><br>
+59:                                Price: <%= item.price %><br>
+60:                                Produce of: <%= item.mfg_date %><br>
+61:                                Expiry Date: <%= item.expiry_date %></p>
+62:                               <div class="text-center">
+63:     
+64:                                <li><%= link_to "Edit", edit_product_path(item) %></li>
+65:                                <li><%= link_to "Delete", product_path(item), data: {
+66:                                                                turbo_method: :delete,
+67:                                                                turbo_confirm: "Are you sure?" } %></li>
+68:                                </div>
+69:                            </div>
+70:                        </div>
+71:                      <% end %>
+72:                </div>
+73:            </div> 
+74:        </div>
+75:    </div>
+  
+app/views/products/index.html.erb:21: syntax error, unexpected local variable or method, expecting '}'
+Started GET "/" for ::1 at 2024-05-18 16:24:18 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'vegetable')[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 51.4ms | Allocations: 19608)
+  Rendered layout layouts/application.html.erb (Duration: 51.7ms | Allocations: 19700)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 12.5ms | Allocations: 22225)
+
+
+  
+ActionView::Template::Error (undefined method `edit_producct' for #<ActionView::Base:0x00000000011a80>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_producct(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:25:53 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1655)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4175)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:             <div class = "row" >
+    5:                 <h3>All Vegetables</h3>
+    6:                  <% vegetable_counter = 0 %>
+    7:                   <% @vegetables.each do |vegetable| %>
+    8:                    <% vegetable_counter += 1%>
+    9:                     <div class="col align-self-start card" style="width: 22rem;">
+   10:                         <div class="card-body">
+  
+app/views/products/index.html.erb:7
+Started PUT "/__web_console/repl_sessions/a030b797dac1992cae405553cd5551d4" for ::1 at 2024-05-18 16:26:09 +0600
+Started PUT "/__web_console/repl_sessions/a030b797dac1992cae405553cd5551d4" for ::1 at 2024-05-18 16:26:12 +0600
+Started GET "/" for ::1 at 2024-05-18 16:27:25 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 7314)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 7406)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.1ms | Allocations: 9927)
+
+
+  
+ActionView::Template::Error (undefined method `edit_producct_product' for #<ActionView::Base:0x0000000001b3c8>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_producct_product(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started PUT "/__web_console/repl_sessions/2d5f71489e831271e5f946d370e0c285" for ::1 at 2024-05-18 16:27:40 +0600
+Started PUT "/__web_console/repl_sessions/2d5f71489e831271e5f946d370e0c285" for ::1 at 2024-05-18 16:27:43 +0600
+Started PUT "/__web_console/repl_sessions/2d5f71489e831271e5f946d370e0c285" for ::1 at 2024-05-18 16:28:03 +0600
+Started GET "/" for ::1 at 2024-05-18 16:28:30 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 6364)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 6456)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.0ms | Allocations: 8977)
+
+
+  
+ActionView::Template::Error (undefined method `edit_producct_path' for #<ActionView::Base:0x0000000001ffb8>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_producct_path(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:29:24 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 6366)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 6458)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.5ms | Allocations: 8978)
+
+
+  
+ActionView::Template::Error (undefined method `edit_vegetable_path' for #<ActionView::Base:0x00000000024bd0>):
+    15:                             Produce of: <%= vegetable.mfg_date %><br>
+    16:                             Expiry Date: <%= vegetable.expiry_date %></p>
+    17:                             <div class="text-center">
+    18:                                 <%= link_to "Edit", edit_vegetable_path(vegetable) %>
+    19:                                 <%= link_to "Delete", product_path(vegetable), data: {
+    20:                                                 turbo_method: :delete,
+    21:                                                 turbo_confirm: "Are you sure?" } %>
+  
+app/views/products/index.html.erb:18
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:36:28 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 1655)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 8.9ms | Allocations: 7252)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:             <div class = "row" >
+    5:                 <h3>All Vegetables</h3>
+    6:                  <% vegetable_counter = 0 %>
+    7:                   <% @vegetables.each do |vegetable| %>
+    8:                    <% vegetable_counter += 1%>
+    9:                     <div class="col align-self-start card" style="width: 22rem;">
+   10:                         <div class="card-body">
+  
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:37:32 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2114)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2240)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 7.7ms | Allocations: 18244)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:             <div class = "row" >
+    5:                 <h3>All Vegetables</h3>
+    6:                  <% vegetable_counter = 0 %>
+    7:                   <% @vegetables.each do |vegetable| %>
+    8:                    <% vegetable_counter += 1%>
+    9:                     <div class="col align-self-start card" style="width: 22rem;">
+   10:                         <div class="card-body">
+  
+app/views/products/index.html.erb:7
+Started PUT "/__web_console/repl_sessions/d2a757445f38c1343d70eb34ed79359e" for ::1 at 2024-05-18 16:37:38 +0600
+Started PUT "/__web_console/repl_sessions/d2a757445f38c1343d70eb34ed79359e" for ::1 at 2024-05-18 16:37:40 +0600
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for inspect */ LIMIT $2[0m  [["category", "vegetable"], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2024-05-18 16:38:41 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'leafy_green')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'common_item')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 6582)
+  Rendered layout layouts/application.html.erb (Duration: 174.7ms | Allocations: 56847)
+Completed 200 OK in 185ms (Views: 174.8ms | ActiveRecord: 2.7ms | Allocations: 60081)
+
+
+Started GET "/" for ::1 at 2024-05-18 16:39:02 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1625)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1717)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.9ms | Allocations: 4870)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    4:             <div class = "row" >
+    5:                 <h3>All Vegetables</h3>
+    6:                  <% vegetable_counter = 0 %>
+    7:                   <% @vegetables.each do |vegetable| %>
+    8:                    <% vegetable_counter += 1%>
+    9:                     <div class="col align-self-start card" style="width: 22rem;">
+   10:                         <div class="card-body">
+  
+app/views/products/index.html.erb:7
+Started GET "/" for ::1 at 2024-05-18 16:39:17 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'leafy_green')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'common_item')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 6464)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 30593)
+Completed 200 OK in 45ms (Views: 34.7ms | ActiveRecord: 3.5ms | Allocations: 33770)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-18 16:41:18 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/" for ::1 at 2024-05-18 16:41:22 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'leafy_green')[0m
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (category = 'common_item')[0m
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2202)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7574)
+Completed 200 OK in 14ms (Views: 11.8ms | ActiveRecord: 0.8ms | Allocations: 7884)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-18 16:41:23 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/common_items" for ::1 at 2024-05-18 16:41:24 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/leafy_greens" for ::1 at 2024-05-18 16:41:26 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/leafy_greens" for ::1 at 2024-05-18 16:41:30 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/" for ::1 at 2024-05-18 16:42:54 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:7
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:31
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:53
+  Rendered products/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 7231)
+  Rendered layout layouts/application.html.erb (Duration: 35.7ms | Allocations: 31253)
+Completed 200 OK in 44ms (Views: 34.1ms | ActiveRecord: 3.7ms | Allocations: 33794)
+
+
+Started GET "/common_items" for ::1 at 2024-05-18 16:43:00 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/leafy_greens" for ::1 at 2024-05-18 16:44:04 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/vegetables" for ::1 at 2024-05-18 16:44:04 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/common_items" for ::1 at 2024-05-18 16:44:05 +0600
+  
+ActionController::RoutingError (uninitialized constant ProductController):
+  
+Started GET "/common_items" for ::1 at 2024-05-18 16:44:30 +0600
+Processing by ProductsController#common_items as HTML
+Completed 406 Not Acceptable in 6ms (ActiveRecord: 0.7ms | Allocations: 3068)
+
+
+  
+ActionController::MissingExactTemplate (ProductsController#common_items is missing a template for request formats: text/html):
+  
+actionpack (7.1.3.2) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.3.2) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/common_items" for ::1 at 2024-05-18 16:45:34 +0600
+Processing by ProductsController#common_items as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms | Allocations: 3378)
+
+
+  
+ActionView::MissingTemplate (Missing template products/common_items, application/common_items with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/et/Codes/Samiul/vegetable_store/app/views"
+  * "/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/app/views"
+  * "/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/app/views"
+  * "/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.1.3.2/app/views"
+):
+  
+app/controllers/products_controller.rb:12:in `common_items'
+Started GET "/common_items" for ::1 at 2024-05-18 16:46:45 +0600
+Processing by ProductsController#common_items as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms | Allocations: 3359)
+
+
+  
+ActionView::MissingTemplate (Missing template products/common_items, application/common_items with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/Users/et/Codes/Samiul/vegetable_store/app/views"
+  * "/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/turbo-rails-2.0.5/app/views"
+  * "/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actiontext-7.1.3.2/app/views"
+  * "/Users/et/.rbenv/versions/3.2.2/lib/ruby/gems/3.2.0/gems/actionmailbox-7.1.3.2/app/views"
+):
+  
+app/controllers/products_controller.rb:12:in `common_items'
+Started GET "/common_items" for ::1 at 2024-05-18 16:47:33 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 8.2ms | Allocations: 5362)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 5454)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.3ms | Allocations: 8595)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_common_item_path' for #<ActionView::Base:0x000000000389a0>):
+    13: 
+    14: <div class="d-grid gap-2 col-4 mx-auto">
+    15:   <button type="button" class="btn btn-outline-primary">
+    16:     <%= link_to "Add New Item", new_common_item_path %>
+    17:   </button>
+    18: </div>
+  
+app/views/products/common_items.html.erb:16
+Started GET "/common_items" for ::1 at 2024-05-18 16:48:03 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 6.8ms | Allocations: 4412)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 29344)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.6ms | Allocations: 32483)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"product"}):
+    23:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    24:           <li class="nav-item">
+    25:             <div class="nav-link active">
+    26:              <%= link_to "Common item ", :controller => :product, :action => :common_items%>
+    27:           </li>
+    28:           <li class="nav-item">
+    29:             <div class="nav-link active">
+  
+app/views/layouts/application.html.erb:26
+Started GET "/common_items" for ::1 at 2024-05-18 16:49:15 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 6.9ms | Allocations: 4412)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 29045)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.5ms | Allocations: 32185)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"product"}):
+    23:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    24:           <li class="nav-item">
+    25:             <div class="nav-link active">
+    26:              <%= link_to "Common item ", :controller => :product, :action => :common_items%>
+    27:           </li>
+    28:           <li class="nav-item">
+    29:             <div class="nav-link active">
+  
+app/views/layouts/application.html.erb:26
+Started GET "/common_items" for ::1 at 2024-05-18 16:49:43 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 7.6ms | Allocations: 4414)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 28261)
+Completed 200 OK in 38ms (Views: 28.7ms | ActiveRecord: 2.3ms | Allocations: 31424)
+
+
+Started GET "/common_items" for ::1 at 2024-05-18 16:49:46 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 1.7ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5854)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 6146)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-18 16:49:47 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 3.3ms | Allocations: 1791)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1882)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2222)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_vegetable_path' for #<ActionView::Base:0x00000000047130>):
+    14: 
+    15: <div class="d-grid gap-2 col-4 mx-auto">
+    16:   <button type="button" class="btn btn-outline-primary">
+    17:     <%= link_to "Add New Vegetable", new_vegetable_path %>
+    18:   </button>
+    19: </div>
+  
+app/views/products/vegetables.erb:17
+Started GET "/vegetables" for ::1 at 2024-05-18 16:50:15 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 5.8ms | Allocations: 4454)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 28308)
+Completed 200 OK in 40ms (Views: 32.3ms | ActiveRecord: 2.2ms | Allocations: 31466)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-18 16:50:17 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 1.7ms | Allocations: 629)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5990)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 6280)
+
+
+Started GET "/common_items" for ::1 at 2024-05-18 16:50:19 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 2.4ms | Allocations: 772)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6034)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.1ms | Allocations: 6391)
+
+
+Started GET "/leafy_greens" for ::1 at 2024-05-18 16:50:20 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.3ms | Allocations: 815)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6071)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 6426)
+
+

@@ -1,2 +1,0 @@
-class LeafyGreen < Product
-end

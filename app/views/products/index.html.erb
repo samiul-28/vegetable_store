@@ -4,7 +4,7 @@
             <div class = "row" >
                 <h3>All Vegetables</h3>
                  <% vegetable_counter = 0 %>
-                  <% @products.where("type = 'Vegetable'").each do |vegetable| %>
+                  <% Product.vegetables.each do |vegetable| %>
                    <% vegetable_counter += 1%>
                     <div class="col align-self-start card" style="width: 22rem;">
                         <div class="card-body">
@@ -15,8 +15,8 @@
                             Produce of: <%= vegetable.mfg_date %><br>
                             Expiry Date: <%= vegetable.expiry_date %></p>
                             <div class="text-center">
-                                <%= link_to "Edit", edit_vegetable_path(vegetable) %>
-                                <%= link_to "Delete", vegetable_path(vegetable), data: {
+                                <%= link_to "Edit", edit_product_path(vegetable) %>
+                                <%= link_to "Delete", product_path(vegetable), data: {
                                                 turbo_method: :delete,
                                                 turbo_confirm: "Are you sure?" } %>
                             </div>
@@ -28,7 +28,7 @@
             <hr>
             <div class = "row" >
                 <h3>All Leafy Greens</h3>
-                  <% @products.where("type = 'LeafyGreen'").each do |item| %>
+                  <% Product.leafy_greens.each do |item| %>
                     <div class="col align-self-start card" style="width: 22rem;">
                         <div class="card-body">
                             <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
@@ -38,8 +38,8 @@
                             Produce of: <%= item.mfg_date %><br>
                             Expiry Date: <%= item.expiry_date %></p>
                             <div class="text-center">
-                                <%= link_to "Edit", edit_leafy_green_path(item) %>
-                                <%= link_to "Delete", leafy_green_path(item), data: {
+                                <%= link_to "Edit", edit_product_path(item) %>
+                                <%= link_to "Delete", product_path(item), data: {
                                                 turbo_method: :delete,
                                                 turbo_confirm: "Are you sure?" } %>
                             </div>
@@ -50,7 +50,7 @@
             <hr>
             <div class = "row" >
                 <h3>All Common Items</h3>
-                  <% @products.where("type = 'CommonItem'").each do |item| %>
+                  <% Product.common_items.each do |item| %>
                     <div class="col align-self-start card" style="width: 22rem;">
                         <div class="card-body">
                             <h3 class="card-title text-decoration-underline text-center"><%= item.name %></h3>
@@ -61,8 +61,8 @@
                             Expiry Date: <%= item.expiry_date %></p>
                            <div class="text-center">
  
-                            <li><%= link_to "Edit", edit_common_item_path(item) %></li>
-                            <li><%= link_to "Delete", common_item_path(item), data: {
+                            <li><%= link_to "Edit", edit_product_path(item) %></li>
+                            <li><%= link_to "Delete", product_path(item), data: {
                                                             turbo_method: :delete,
                                                             turbo_confirm: "Are you sure?" } %></li>
                             </div>

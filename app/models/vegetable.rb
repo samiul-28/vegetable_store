@@ -1,2 +1,0 @@
-class Vegetable < Product
-end
