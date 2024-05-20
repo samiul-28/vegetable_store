@@ -1,6 +1,17 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    # if params[:product].present?
+    #   @products = Product.where("name ILIKE ?", params[:product])
+    # else
+      @products = Product.all
+    # end
+  end
+  def search
+    if params[:name].present?
+      @products = Product.where("name ILIKE ?", params[:name])
+    else
+      @products = Product.all
+    end
   end
 
   def vegetables
@@ -56,11 +67,11 @@ class ProductsController < ApplicationController
   private
 
     def find_product
-      @product = Producct.find(params[:id])
+      @product = Product.find(params[:id])
     end
 
     def product_params
-      params.require(:product).permit(:name, :variety, :details, :price, :mfg_date, :expiry_date, :category, image_attributes:
+      params.require(:product).permit(:name, :variety, :details, :price, :mfg_date, :expiry_date, :category, :search, image_attributes:
       [
         :name, :copywright, :alt_text, :details, :url
       ],

@@ -2,5 +2,11 @@
 <div class = "d-flex" >
   <%= form.text_field :query, class: "form-control me-2", placeholder: "Search Products..."%>
   <%= form.submit "Search", class: "btn btn-outline-success" %>
-</div>
-<% end %>
+</div> 
+<% end %> 
+
+
+<%# <%= form_tag(products_path, method: :get ) do %>
+<%# <%= text_field_tag(:search, params[:search]) %>
+<%# <%= submit_tag("search") %>
+<%# <% end %> 

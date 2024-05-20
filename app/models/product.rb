@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :supplier, :image
   VALID_CATEGORIES = ['common_item', 'vegetable', 'leafy_green']
 
-  validates :name, :price, :mfg_date, :expiry_date, presence: true
+  validates :name, :price, :mfg_date, :expiry_date, :search, presence: true
   validates :category, inclusion: {in: Product::VALID_CATEGORIES}, presence: true
 
   scope :common_items, -> { where(category: "common_item") }
