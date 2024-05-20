@@ -17901,3 +17901,1136 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 76ms (Views: 72.4ms | ActiveRecord: 1.8ms | Allocations: 8371)
 
 
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (9.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DropCommonItemsLeafyGreensVegetables (20240520090418)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DropCommonItemsLeafyGreensVegetables (20240520090418)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE "common_items"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DropCommonItemsLeafyGreensVegetables (20240520090418)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "common_items"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DropCommonItemsLeafyGreensVegetables (20240520090418)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "leafy_greens"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2024-05-20 15:19:42 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:29
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:51
+  Rendered products/index.html.erb within layouts/application (Duration: 47.4ms | Allocations: 21755)
+  Rendered products/_search.html.erb (Duration: 3.0ms | Allocations: 1051)
+  Rendered layout layouts/application.html.erb (Duration: 2690.6ms | Allocations: 80960)
+Completed 200 OK in 2764ms (Views: 2686.1ms | ActiveRecord: 11.6ms | Allocations: 92950)
+
+
+Started GET "/common_items" for ::1 at 2024-05-20 15:19:49 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 2.9ms | Allocations: 821)
+  Rendered products/_search.html.erb (Duration: 0.5ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6863)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.2ms | Allocations: 7225)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-20 15:19:50 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.html.erb:7
+  Rendered products/vegetables.html.erb within layouts/application (Duration: 2.7ms | Allocations: 821)
+  Rendered products/_search.html.erb (Duration: 0.4ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6855)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms | Allocations: 7216)
+
+
+Started GET "/leafy_greens" for ::1 at 2024-05-20 15:19:51 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.html.erb:7
+  Rendered products/leafy_greens.html.erb within layouts/application (Duration: 2.7ms | Allocations: 822)
+  Rendered products/_search.html.erb (Duration: 0.5ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 6838)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.3ms | Allocations: 7199)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-20 15:19:53 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.html.erb:7
+  Rendered products/vegetables.html.erb within layouts/application (Duration: 2.2ms | Allocations: 634)
+  Rendered products/_search.html.erb (Duration: 0.5ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6659)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 6957)
+
+
+Started GET "/common_items" for ::1 at 2024-05-20 15:19:53 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 2.0ms | Allocations: 586)
+  Rendered products/_search.html.erb (Duration: 0.4ms | Allocations: 711)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6610)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 6902)
+
+
+Started GET "/products/new" for ::1 at 2024-05-20 15:19:58 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.5ms | Allocations: 1886)
+  Rendered products/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2158)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2260)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 2665)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/vegetables" for ::1 at 2024-05-20 15:20:00 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.html.erb:7
+  Rendered products/vegetables.html.erb within layouts/application (Duration: 2.1ms | Allocations: 628)
+  Rendered products/_search.html.erb (Duration: 0.4ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 6854)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 7146)
+
+
+Started GET "/products/new" for ::1 at 2024-05-20 15:20:02 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.2ms | Allocations: 1496)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1579)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1681)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1965)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/products/new" for ::1 at 2024-05-20 15:20:03 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.3ms | Allocations: 1495)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1578)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1680)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1964)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/leafy_greens" for ::1 at 2024-05-20 15:20:07 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.html.erb:7
+  Rendered products/leafy_greens.html.erb within layouts/application (Duration: 2.7ms | Allocations: 629)
+  Rendered products/_search.html.erb (Duration: 0.4ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 6837)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.3ms | Allocations: 7128)
+
+
+Started GET "/products/new" for ::1 at 2024-05-20 15:20:07 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.2ms | Allocations: 1495)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1578)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1680)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1964)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/products/new" for ::1 at 2024-05-20 15:20:09 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.2ms | Allocations: 1495)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1578)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1680)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1964)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/products/new" for ::1 at 2024-05-20 15:20:10 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.8ms | Allocations: 1495)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1578)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1680)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1964)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/vegetables" for ::1 at 2024-05-20 15:20:15 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.html.erb:7
+  Rendered products/vegetables.html.erb within layouts/application (Duration: 1.5ms | Allocations: 627)
+  Rendered products/_search.html.erb (Duration: 0.3ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6838)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.1ms | Allocations: 7127)
+
+
