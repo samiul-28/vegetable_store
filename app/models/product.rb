@@ -12,4 +12,6 @@ class Product < ApplicationRecord
   scope :vegetables, -> { where(category: "vegetable") }
   scope :leafy_greens, -> { where(category: "leafy_green") }
 
+  scope :search, -> (query) { where("name ILIKE ? OR details ILIKE ?", "%#{query}%", "%#{query}%")}
+
 end
