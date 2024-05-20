@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+                <% @products.each do |c| %>
+                <h2>Parent Category: <%= c.category.capitalize %> </h2>
+                    <div class = "row" >
+                        <div class="col align-self-start card" style="width: 22rem;">
+                            <div class="card-body">
+                                <h3 class="card-title text-decoration-underline text-center"><%= c.name %></h3>
+                                <p class="text-center">
+                                Desc: <%= c.details %><br>
+                                Price: <%= c.price %><br>
+                                Produce of: <%= c.mfg_date %><br>
+                                Expiry Date: <%= c.expiry_date %></p>
+                                <div class="text-center">
+                                    <%= link_to "Edit", edit_product_path(c) %>
+                                    <%= link_to "Delete", product_path(c), data: {
+                                                    turbo_method: :delete,
+                                                    turbo_confirm: "Are you sure?" } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div> 
+    </div>
+</div>

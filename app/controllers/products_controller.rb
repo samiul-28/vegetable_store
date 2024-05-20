@@ -1,11 +1,16 @@
 class ProductsController < ApplicationController
   def index
     if params[:query].present?
-      @products = Product.search(params[:query])
+      search
     else
       @products = Product.all
     end
 
+  end
+
+  def search
+    @products = Product.search(params[:query])
+    render '_search_page'
   end
 
   def vegetables
