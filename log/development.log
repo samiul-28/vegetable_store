@@ -17171,3 +17171,336 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.3ms | Allocations: 9168)
 
 
+Started GET "/" for 127.0.0.1 at 2024-05-20 18:36:27 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:10
+  Rendered products/index.html.erb within layouts/application (Duration: 95.2ms | Allocations: 21403)
+  Rendered products/_search.html.erb (Duration: 2.7ms | Allocations: 991)
+  Rendered layout layouts/application.html.erb (Duration: 287.3ms | Allocations: 74278)
+Completed 200 OK in 372ms (Views: 265.8ms | ActiveRecord: 35.8ms | Allocations: 86338)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-20 18:40:28 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetables"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_greens"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_items"]]
+  ↳ app/views/products/index.html.erb:10
+  Rendered products/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2574)
+  Rendered products/_search.html.erb (Duration: 1.4ms | Allocations: 852)
+  Rendered layout layouts/application.html.erb (Duration: 33.9ms | Allocations: 27714)
+Completed 200 OK in 43ms (Views: 33.8ms | ActiveRecord: 2.4ms | Allocations: 30487)
+
+
+Started GET "/" for 127.0.0.1 at 2024-05-20 18:43:40 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:10
+  Rendered products/index.html.erb within layouts/application (Duration: 18.9ms | Allocations: 7055)
+  Rendered products/_search.html.erb (Duration: 0.7ms | Allocations: 848)
+  Rendered layout layouts/application.html.erb (Duration: 72.1ms | Allocations: 31942)
+Completed 200 OK in 81ms (Views: 69.0ms | ActiveRecord: 4.9ms | Allocations: 34692)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2024-05-20 18:43:42 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 522)
+
+
+  
+NameError (uninitialized constant ProductsController::Producct):
+  
+app/controllers/products_controller.rb:72:in `find_product'
+app/controllers/products_controller.rb:49:in `edit'
+Started GET "/products?query=palang&commit=Search" for 127.0.0.1 at 2024-05-20 18:47:21 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"query"=>"palang", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/_search_page.html.erb within layouts/application
+  [1m[36mProduct Load (3.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%palang%' OR details ILIKE '%palang%')[0m
+  ↳ app/views/products/_search_page.html.erb:4
+  Rendered products/_search_page.html.erb within layouts/application (Duration: 6.0ms | Allocations: 861)
+  Rendered products/_search.html.erb (Duration: 0.5ms | Allocations: 717)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 7176)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 3.3ms | Allocations: 7563)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-05-20 18:49:07 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 2.9ms | Allocations: 812)
+  Rendered products/_search.html.erb (Duration: 0.7ms | Allocations: 711)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 6936)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 7292)
+
+
+Started GET "/users/sign_up" for ::1 at 2024-05-23 14:27:59 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (4.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:155:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-05-23 14:33:17 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:10
+  Rendered products/index.html.erb within layouts/application (Duration: 106.2ms | Allocations: 21602)
+  Rendered products/_search.html.erb (Duration: 3.2ms | Allocations: 991)
+  Rendered layout layouts/application.html.erb (Duration: 308.8ms | Allocations: 74174)
+Completed 200 OK in 389ms (Views: 279.0ms | ActiveRecord: 41.1ms | Allocations: 86293)
+
+
+Started GET "/leafy_greens" for ::1 at 2024-05-23 14:33:26 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 3.8ms | Allocations: 864)
+  Rendered products/_search.html.erb (Duration: 0.5ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 6929)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.3ms | Allocations: 7294)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-23 14:33:27 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 3.6ms | Allocations: 822)
+  Rendered products/_search.html.erb (Duration: 0.4ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 6848)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 7207)
+
+
+Started GET "/common_items" for ::1 at 2024-05-23 14:33:28 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 3.4ms | Allocations: 782)
+  Rendered products/_search.html.erb (Duration: 1.1ms | Allocations: 712)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 6811)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.3ms | Allocations: 7173)
+
+
+Started GET "/" for ::1 at 2024-05-23 14:40:35 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetables"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_greens"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_items"]]
+  ↳ app/views/products/index.html.erb:10
+  Rendered products/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 5124)
+  Rendered products/_search.html.erb (Duration: 1.2ms | Allocations: 852)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 29958)
+Completed 200 OK in 60ms (Views: 45.8ms | ActiveRecord: 7.2ms | Allocations: 32532)
+
+
+Started GET "/vegetables" for ::1 at 2024-05-23 14:41:30 +0600
+Processing by ProductsController#vegetables as HTML
+Completed 500 Internal Server Error in 241362ms (ActiveRecord: 0.0ms | Allocations: 65356)
+
+
+Started GET "/" for ::1 at 2024-05-23 14:45:32 +0600
+  
+Errno::EIO (Input/output error - read):
+  
+app/models/product.rb:15:in `<class:Product>'
+app/models/product.rb:1:in `<main>'
+app/controllers/products_controller.rb:17:in `vegetables'
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetables"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_greens"]]
+  ↳ app/views/products/index.html.erb:10
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_items"]]
+  ↳ app/views/products/index.html.erb:10
+  Rendered products/index.html.erb within layouts/application (Duration: 129.7ms | Allocations: 818637)
+  Rendered products/_search.html.erb (Duration: 14.4ms | Allocations: 69517)
+  Rendered layout layouts/application.html.erb (Duration: 825.1ms | Allocations: 4918991)
+Completed 200 OK in 896ms (Views: 834.5ms | ActiveRecord: 6.9ms | Allocations: 5345576)
+
+
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "vegetables"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "leafy_greens"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "leafy_greens"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "leafy_greens"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "vegetables"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "vegetable"], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1 /* loading for pp */ LIMIT $2[0m  [["category", "vegetable"], ["LIMIT", 11]]
+Started GET "/" for ::1 at 2024-05-23 14:59:55 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1919)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2045)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms | Allocations: 14028)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x00000001110a0700>::VALID_CATEGORIES):
+    2:     <div class="row">
+    3:         <div class="col">
+    4:             <div class = "row" >
+    5:                 <% VALID_CATEGORIES.each do |i| %>
+    6:                     <div class = "row" >
+    7:                         <% item_counter = 0 %>
+    8:                         <% header_displayed = false %>
+  
+app/views/products/index.html.erb:5
+Started GET "/" for ::1 at 2024-05-23 15:05:15 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 82.4ms | Allocations: 21416)
+  Rendered products/_search.html.erb (Duration: 3.2ms | Allocations: 985)
+  Rendered layout layouts/application.html.erb (Duration: 232.5ms | Allocations: 72814)
+Completed 200 OK in 240ms (Views: 218.8ms | ActiveRecord: 15.7ms | Allocations: 75351)
+
+
+Started GET "/" for ::1 at 2024-05-23 15:09:34 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 7050)
+  Rendered products/_search.html.erb (Duration: 0.9ms | Allocations: 846)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 32052)
+Completed 200 OK in 56ms (Views: 44.8ms | ActiveRecord: 5.6ms | Allocations: 34549)
+
+
+Started GET "/products?query=Data&commit=Search" for ::1 at 2024-05-23 15:09:37 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"query"=>"Data", "commit"=>"Search"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/_search_view.html.erb within layouts/application
+  [1m[36mProduct Load (3.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (name ILIKE '%Data%' OR details ILIKE '%Data%')[0m
+  ↳ app/views/products/_search_view.html.erb:4
+  Rendered products/_search_view.html.erb within layouts/application (Duration: 6.2ms | Allocations: 860)
+  Rendered products/_search.html.erb (Duration: 0.4ms | Allocations: 716)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 6870)
+Completed 200 OK in 17ms (Views: 13.0ms | ActiveRecord: 3.6ms | Allocations: 7256)
+
+
+Started GET "/products/6/edit" for ::1 at 2024-05-23 15:12:08 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"6"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 500)
+
+
+  
+NameError (uninitialized constant ProductsController::Producct):
+  
+app/controllers/products_controller.rb:72:in `find_product'
+app/controllers/products_controller.rb:49:in `edit'

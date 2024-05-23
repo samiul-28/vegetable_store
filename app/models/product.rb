@@ -8,10 +8,7 @@ class Product < ApplicationRecord
   validates :name, :price, :mfg_date, :expiry_date, presence: true
   validates :category, inclusion: {in: Product::VALID_CATEGORIES}, presence: true
 
-  scope :common_items, -> { where(category: "common_item") }
-  scope :vegetables, -> { where(category: "vegetable") }
-  scope :leafy_greens, -> { where(category: "leafy_green") }
-
+  scope :product_category, -> (i) { where(category: "#{i}" ) }
   scope :search, -> (query) { where("name ILIKE ? OR details ILIKE ?", "%#{query}%", "%#{query}%")}
 
 end

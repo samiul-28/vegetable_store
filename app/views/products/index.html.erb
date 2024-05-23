@@ -2,12 +2,11 @@
     <div class="row">
         <div class="col">
             <div class = "row" >
-             <% categories = ["vegetables", "leafy_greens", "common_items"] %>
-                <% categories.each do |i| %>
+                <% Product::VALID_CATEGORIES.each do |i| %>
                     <div class = "row" >
                         <% item_counter = 0 %>
                         <% header_displayed = false %>
-                        <% @products.vegetables.each do |c| %>
+                        <% @products.product_category(i).each do |c| %>
                             <% if c && !header_displayed %>
                                 <h3>All <%= i.capitalize %></h3>
                                 <% header_displayed = true %>

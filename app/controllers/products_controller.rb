@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:query])
-    render '_search_page'
+    render '_search_view'
   end
 
   def vegetables
