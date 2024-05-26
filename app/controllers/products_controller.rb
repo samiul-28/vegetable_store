@@ -14,15 +14,15 @@ class ProductsController < ApplicationController
   end
 
   def vegetables
-    @vegetables = Product.vegetables
+    @vegetables = Product.product_category("vegetable")
   end
 
   def common_items
-    @common_items = Product.common_items
+    @common_items = Product.product_category("common_item")
   end
 
   def leafy_greens
-    @leafy_greens = Product.leafy_greens
+    @leafy_greens = Product.product_category("leafy_green")
   end
 
 
