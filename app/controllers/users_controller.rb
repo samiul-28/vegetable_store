@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate, only: [:destroy]
+
+
   def index
     @users = User.all
   end
@@ -12,9 +15,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    find_user
+    @user = User.new(user_params)
     if @user.save
-      redirect_to @user
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -43,7 +46,7 @@ class UsersController < ApplicationController
 
   private
     def find_user
-      @user = User.find_by(params[:id])
+      @user = User.find(params[:id])
     end
 
     def user_params
