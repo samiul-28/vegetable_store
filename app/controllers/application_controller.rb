@@ -19,4 +19,11 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  def require_admin
+    #if you need to reserve certain controller actions for admins
+    unless !!@current_user.category("admin")
+      flash[:alert] = "You must be an admin to perform this task"
+    end
+  end
 end
