@@ -11,14 +11,13 @@
   </head>
 
   <body>
-    <% if notice %>
+    <%= render "shared/navbar" %>
+        <% if notice %>
       <%= notice %>
     <% end %>
     <% if alert %>
       <%= alert %>
     <% end %>
-    
-    <%= render "shared/navbar" %>
 
   
     <%= yield %>
