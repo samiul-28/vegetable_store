@@ -1,16 +1,13 @@
 Rails.application.routes.draw do
+  devise_for :users
+  
   root "products#index"
 
-  resources :users
   resources :products
   resources :images
 
   get "/vegetables", to: "products#vegetables"
   get "/leafy_greens", to: "products#leafy_greens"
   get "/common_items", to: "products#common_items"
-
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  get 'logout', to: 'sessions#destroy'
 
 end

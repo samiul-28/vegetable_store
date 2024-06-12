@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
+
   def index
     if params[:query].present?
       search
@@ -69,7 +72,7 @@ class ProductsController < ApplicationController
   private
 
     def find_product
-      @product = Producct.find(params[:id])
+      @product = Product.find(params[:id])
     end
 
     def product_params

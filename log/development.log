@@ -40921,3 +40921,3289 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 31ms (Views: 29.8ms | ActiveRecord: 0.0ms | Allocations: 27560)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (7.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to RemoveUserTable (20240612091406)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240612091406') RETURNING "version"[0m
+  [1m[36mTRANSACTION (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DeviseCreateUsers (20240612091928)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "category" character varying DEFAULT 'guest' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp(6), "last_sign_in_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240612091928') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1042603844265157860)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-06-12 15:34:22 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 66.2ms | Allocations: 21607)
+  Rendered shared/_navbar.html.erb (Duration: 5.3ms | Allocations: 2524)
+  Rendered layout layouts/application.html.erb (Duration: 309.7ms | Allocations: 74560)
+Completed 500 Internal Server Error in 349ms (ActiveRecord: 16.7ms | Allocations: 83131)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login_path' for #<ActionView::Base:0x0000000000e128>):
+    39:             <% if logged_in? %>
+    40:               <%= link_to "Logout", logout_path, class: "btn btn-danger" %>
+    41:               <% else %>
+    42:                 <%= link_to "Sign In", login_path,  class: "btn btn-success me-1" %>
+    43:                 <%= link_to "Sign Up", new_user_path, class: "btn btn-outline-success me-2" %>
+    44:             <% end %>
+    45:           </div>
+  
+app/views/shared/_navbar.html.erb:42
+app/views/layouts/application.html.erb:14
+Started GET "/" for 127.0.0.1 at 2024-06-12 15:36:58 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 17.6ms | Allocations: 7043)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 1144)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | Allocations: 31572)
+Completed 200 OK in 52ms (Views: 43.5ms | ActiveRecord: 3.7ms | Allocations: 33976)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:37:06 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 228)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 527)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3433)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 1244)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 9450)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.8ms | Allocations: 23383)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:37:07 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 4056)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 1202)
+  Rendered layout layouts/application.html.erb (Duration: 60.7ms | Allocations: 46539)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.0ms | Allocations: 51997)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/" for 127.0.0.1 at 2024-06-12 15:37:17 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2372)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 239)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 8004)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 8282)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:37:18 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6840)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 7837)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:37:18 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1238)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | Allocations: 36267)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 39427)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:37:19 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 6934)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 7931)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:37:20 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 896)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 6960)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 7911)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:37:20 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 928)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 1263)
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | Allocations: 55771)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms | Allocations: 61541)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:38:02 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 1262)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6934)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 7931)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"common_items", :controller=>"devise/products"}):
+     9:         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    10:           <li class="nav-item">
+    11:             <div class="nav-link active">
+    12:              <%= link_to "Common item ", :controller => :products, :action => :common_items%>
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:12
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:41:19 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1796)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 2126)
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 26661)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 3.5ms | Allocations: 33817)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"vegetables", :controller=>"devise/products"}):
+    13:           </li>
+    14:           <li class="nav-item">
+    15:             <div class="nav-link active">
+    16:              <%= link_to "Vegetable", :controller => :products, :action => :vegetables%>
+    17:           </li>
+    18:           <li class="nav-item">
+    19:             <div class="nav-link active">
+  
+app/views/shared/_navbar.html.erb:16
+app/views/layouts/application.html.erb:14
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:42:21 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1796)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 24952)
+Completed 200 OK in 48ms (Views: 33.8ms | ActiveRecord: 2.2ms | Allocations: 32149)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 15:42:23 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 7.9ms | Allocations: 4361)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 9883)
+Completed 200 OK in 27ms (Views: 17.4ms | ActiveRecord: 3.0ms | Allocations: 12591)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:42:25 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 3.0ms | Allocations: 815)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6198)
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 6557)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 15:42:26 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 2.7ms | Allocations: 775)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 6182)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 6543)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:42:26 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 2.4ms | Allocations: 631)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6035)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.3ms | Allocations: 6331)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 15:42:26 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 3.3ms | Allocations: 586)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 5990)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 6288)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:42:28 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 2.5ms | Allocations: 629)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6018)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.3ms | Allocations: 6315)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 15:42:29 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.1ms | Allocations: 631)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 6036)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.2ms | Allocations: 6332)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:43:37 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1797)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 24858)
+Completed 200 OK in 36ms (Views: 26.7ms | ActiveRecord: 2.3ms | Allocations: 32021)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:43:41 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 212)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1544)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 6375)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 7663)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:44:13 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 6.6ms | Allocations: 4354)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 9946)
+Completed 200 OK in 26ms (Views: 16.6ms | ActiveRecord: 2.4ms | Allocations: 12653)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 15:44:14 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.6ms | Allocations: 1555)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1828)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1930)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2304)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/new.html.erb:10
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:44:15 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2010)
+
+
+  
+NameError (uninitialized constant ProductsController::Producct):
+  
+app/controllers/products_controller.rb:75:in `find_product'
+app/controllers/products_controller.rb:34:in `show'
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:44:55 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1155)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1247)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.8ms | Allocations: 9194)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:45:03 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 4.0ms | Allocations: 881)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 24612)
+Completed 200 OK in 32ms (Views: 31.2ms | ActiveRecord: 0.3ms | Allocations: 24981)
+
+
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:45:04 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1103)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms | Allocations: 1769)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/products/7" for 127.0.0.1 at 2024-06-12 15:45:05 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 3228)
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 25.0ms | Allocations: 39749)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/products/1" for 127.0.0.1 at 2024-06-12 15:45:05 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 5861)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms | Allocations: 39525)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:46:35 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 2.4ms | Allocations: 629)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6121)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms | Allocations: 6414)
+
+
+Started GET "/products/7" for 127.0.0.1 at 2024-06-12 15:46:36 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1103)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1767)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/products/1" for 127.0.0.1 at 2024-06-12 15:46:42 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1103)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 1767)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:46:43 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1103)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 1768)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/products/7" for 127.0.0.1 at 2024-06-12 15:46:45 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1012)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1103)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 1767)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1 class="text-decoration-underline text-center"><%= @vegetable.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @vegetable.description %></p>
+    4: <p class="text-center">Price: <%= @vegetable.price %></p>
+  
+app/views/products/show.html.erb:1
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:47:30 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1414)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1506)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 7.2ms | Allocations: 9104)
+
+
+  
+ActionView::Template::Error (undefined method `description' for #<Product id: 8, name: "beet root", category: "vegetable", variety: "imported", details: "Belgian beet root", price: 0.4e3, mfg_date: "2024-05-05", expiry_date: "2024-05-25", created_at: "2024-05-18 09:44:20.418768000 +0000", updated_at: "2024-05-18 09:44:20.418768000 +0000">):
+    1: <h1 class="text-decoration-underline text-center"><%= @product.name %></h1>
+    2: 
+    3: <p class="text-center">Desc:<%= @product.description %></p>
+    4: <p class="text-center">Price: <%= @product.price %></p>
+    5: <p class="text-center">Produce of: <%= @product.mfg_date %></p>
+    6: <p class="text-center">Expiry Date: <%= @product.expiry_date %></p>
+  
+app/views/products/show.html.erb:3
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:48:26 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1184)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1276)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.4ms | Allocations: 8740)
+
+
+  
+ActionView::Template::Error (undefined method `edit_vegetable_path' for #<ActionView::Base:0x00000000034ff8>):
+     7: 
+     8: <div class="text-center">
+     9:  
+    10:     <li><%= link_to "Edit", edit_vegetable_path(@vegetable) %></li>
+    11: 
+    12:     <li><%= link_to "Delete", vegetable_path(@vegetable), data: {
+    13:                       turbo_method: :delete,
+  
+app/views/products/show.html.erb:10
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 15:49:53 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 367)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 24105)
+Completed 200 OK in 46ms (Views: 29.0ms | ActiveRecord: 4.0ms | Allocations: 31592)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 15:49:58 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 3.7ms | Allocations: 848)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6261)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms | Allocations: 6624)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 15:49:59 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 3.3ms | Allocations: 768)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 6181)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.2ms | Allocations: 6541)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 15:49:59 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 3.1ms | Allocations: 586)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5978)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.9ms | Allocations: 6276)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2024-06-12 15:50:00 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5508)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 6196)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 15:50:02 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.6ms | Allocations: 811)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 6215)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 6573)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:50:20 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 507)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2116)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7036)
+Completed 200 OK in 24ms (Views: 14.5ms | ActiveRecord: 3.2ms | Allocations: 13756)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 15:50:23 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.0ms | Allocations: 632)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 6055)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms | Allocations: 6353)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 15:50:41 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.5ms | Allocations: 631)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 6056)
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 6352)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2024-06-12 15:50:42 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5505)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 6192)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2024-06-12 15:50:43 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"4"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 729)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:50:43 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1230)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 6065)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 7452)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:50:57 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 896)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5721)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 6665)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-06-12 15:50:58 +0600
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 119)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 5705)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 6967)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:51:17 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 896)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 5722)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 6676)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:51:18 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5695)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 6694)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:51:29 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5695)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 6700)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:51:30 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 70)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 896)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 5721)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 6687)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 15:54:19 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 556)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1797)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 24952)
+Completed 200 OK in 45ms (Views: 31.5ms | ActiveRecord: 3.2ms | Allocations: 32128)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:54:20 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 212)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 82)
+  Rendered shared/_form_container.html.erb (Duration: 2.7ms | Allocations: 1353)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1883)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 6714)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 8023)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 15:54:33 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 507)
+  Rendered shared/_form_container.html.erb (Duration: 3.6ms | Allocations: 1917)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2436)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 411)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 25588)
+Completed 200 OK in 53ms (Views: 42.6ms | ActiveRecord: 2.6ms | Allocations: 32600)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:00:09 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 508)
+  Rendered shared/_form_container.html.erb (Duration: 5.4ms | Allocations: 1635)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2147)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 25113)
+Completed 200 OK in 45ms (Views: 33.2ms | ActiveRecord: 2.3ms | Allocations: 32197)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:00:44 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 508)
+  Rendered shared/_form_container.html.erb (Duration: 3.3ms | Allocations: 1601)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2111)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 25270)
+Completed 200 OK in 43ms (Views: 31.8ms | ActiveRecord: 2.3ms | Allocations: 32330)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:01:26 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 508)
+  Rendered shared/_form_container.html.erb (Duration: 4.0ms | Allocations: 1607)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2118)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 25282)
+Completed 200 OK in 47ms (Views: 34.8ms | ActiveRecord: 2.5ms | Allocations: 32338)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:02:09 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 508)
+  Rendered shared/_form_container.html.erb (Duration: 3.7ms | Allocations: 1607)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2114)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 412)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 25121)
+Completed 200 OK in 49ms (Views: 35.9ms | ActiveRecord: 3.2ms | Allocations: 32150)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:03:26 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 508)
+  Rendered shared/_form_container.html.erb (Duration: 4.8ms | Allocations: 1607)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2114)
+  Rendered shared/_navbar.html.erb (Duration: 2.9ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 25270)
+Completed 200 OK in 53ms (Views: 42.8ms | ActiveRecord: 2.0ms | Allocations: 32363)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:03:45 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 508)
+  Rendered shared/_form_container.html.erb (Duration: 4.9ms | Allocations: 1613)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2126)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 25282)
+Completed 200 OK in 46ms (Views: 34.9ms | ActiveRecord: 2.7ms | Allocations: 32327)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:03:53 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1237)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 6065)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 7446)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:04:12 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 214)
+  Rendered shared/_form_container.html.erb (Duration: 3.1ms | Allocations: 981)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1476)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 414)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 24669)
+Completed 200 OK in 48ms (Views: 32.5ms | ActiveRecord: 2.9ms | Allocations: 31722)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:04:13 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.1ms | Allocations: 471)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 546)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 5391)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 6333)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:04:49 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 550)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1719)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 6546)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 7918)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:05:39 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 214)
+  Rendered shared/_form_container.html.erb (Duration: 2.0ms | Allocations: 1040)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1528)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 404)
+  Rendered layout layouts/application.html.erb (Duration: 28.7ms | Allocations: 24604)
+Completed 200 OK in 42ms (Views: 31.6ms | ActiveRecord: 1.9ms | Allocations: 31644)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:05:41 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 550)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1719)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6638)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.0ms | Allocations: 8007)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:05:53 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 214)
+  Rendered shared/_form_container.html.erb (Duration: 2.5ms | Allocations: 1031)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1519)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 399)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 24523)
+Completed 200 OK in 43ms (Views: 32.4ms | ActiveRecord: 2.3ms | Allocations: 31619)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:05:55 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 550)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1719)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 6546)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 7919)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:06:09 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.0ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 562)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5481)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 6453)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:06:11 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.5ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 562)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 5457)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 6417)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:06:11 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5718)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 6732)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:10:57 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 214)
+  Rendered shared/_form_container.html.erb (Duration: 3.0ms | Allocations: 1032)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1522)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 24674)
+Completed 200 OK in 47ms (Views: 36.6ms | ActiveRecord: 2.2ms | Allocations: 31748)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:10:59 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.3ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 562)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5480)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 6451)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:11:00 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 550)
+  Rendered shared/_form_container.html.erb (Duration: 2.6ms | Allocations: 1188)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1588)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 6431)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 7801)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-06-12 16:14:40 +0600
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 214)
+  Rendered devise/shared/_links.html.erb (Duration: 3.5ms | Allocations: 554)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1715)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 413)
+  Rendered layout layouts/application.html.erb (Duration: 88.2ms | Allocations: 24804)
+Completed 200 OK in 104ms (Views: 94.6ms | ActiveRecord: 1.9ms | Allocations: 31841)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:14:49 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.8ms | Allocations: 684)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1168)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 6015)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 7318)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-06-12 16:14:51 +0600
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 604)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 5429)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 6386)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:14:51 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.1ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 562)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5387)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 6349)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2024-06-12 16:14:53 +0600
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 112)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 604)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 5429)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 6365)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:15:02 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 127)
+  Rendered shared/_form_container.html.erb (Duration: 3.0ms | Allocations: 698)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1098)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 5923)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 7299)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:15:40 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 556)
+  Rendered shared/_form_container.html.erb (Duration: 4.0ms | Allocations: 1436)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1907)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 399)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 25053)
+Completed 200 OK in 45ms (Views: 33.7ms | ActiveRecord: 2.0ms | Allocations: 32228)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:16:16 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 556)
+  Rendered shared/_form_container.html.erb (Duration: 3.7ms | Allocations: 1440)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1911)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 399)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 25063)
+Completed 200 OK in 47ms (Views: 31.8ms | ActiveRecord: 2.0ms | Allocations: 32187)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:16:17 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered shared/_form_container.html.erb (Duration: 1.2ms | Allocations: 663)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 738)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5579)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 6588)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:16:26 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 212)
+  Rendered shared/_form_container.html.erb (Duration: 1.8ms | Allocations: 785)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1203)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 6032)
+Completed 200 OK in 22ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 7336)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:16:27 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.0ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 562)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 5388)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 6353)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:16:28 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 115)
+  Rendered shared/_form_container.html.erb (Duration: 1.8ms | Allocations: 663)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 738)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5559)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 6570)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:16:29 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.0ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 562)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 5387)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 6347)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 16:16:35 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 12.9ms | Allocations: 4392)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 118)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 10024)
+Completed 200 OK in 33ms (Views: 22.3ms | ActiveRecord: 3.2ms | Allocations: 12731)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:16:40 +0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 117)
+  Rendered shared/_form_container.html.erb (Duration: 1.3ms | Allocations: 666)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 741)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5653)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 6668)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:16:43 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 13)
+  Rendered shared/_form_container.html.erb (Duration: 1.1ms | Allocations: 488)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 563)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5391)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 6350)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-06-12 16:17:00 +0600
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Admin", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x0000000112872450>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Admin", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "encrypted_password", "category", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", nil], ["email", "admin@admin.com"], ["encrypted_password", "[FILTERED]"], ["category", "guest"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["created_at", "2024-06-12 10:17:00.749629"], ["updated_at", "2024-06-12 10:17:00.749629"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/products/4/edit
+Completed 303 See Other in 292ms (ActiveRecord: 6.4ms | Allocations: 9179)
+
+
+Started GET "/products/4/edit" for 127.0.0.1 at 2024-06-12 16:17:00 +0600
+Processing by ProductsController#edit as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.9ms | Allocations: 1441)
+  Rendered products/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1733)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1835)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.8ms | Allocations: 5305)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/edit.html.erb:2
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:18:49 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 68ms (ActiveRecord: 11.5ms | Allocations: 28857)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:18:51 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 27.0ms | Allocations: 11780)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 427)
+  Rendered layout layouts/application.html.erb (Duration: 208.3ms | Allocations: 61712)
+Completed 200 OK in 228ms (Views: 208.2ms | ActiveRecord: 5.0ms | Allocations: 66984)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:18:55 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 1991)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:18:55 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 7789)
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 1.0ms | Allocations: 8063)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:19:00 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2370)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 7768)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.7ms | Allocations: 8045)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:19:02 +0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 2138)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:19:02 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 7804)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.6ms | Allocations: 8076)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:19:04 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1981)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:19:04 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 7881)
+Completed 200 OK in 17ms (Views: 16.1ms | ActiveRecord: 0.3ms | Allocations: 8154)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 16:19:07 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.7ms | Allocations: 852)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6298)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 6662)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 16:19:07 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 3.1ms | Allocations: 815)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 6219)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.2ms | Allocations: 6578)
+
+
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 16:19:09 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 326)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5714)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.2ms | Allocations: 7138)
+
+
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 16:19:09 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 108)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5508)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 6198)
+
+
+Started GET "/products/8/edit" for 127.0.0.1 at 2024-06-12 16:19:11 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.0ms | Allocations: 1908)
+  Rendered products/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2157)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2259)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 4845)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/edit.html.erb:2
+Started GET "/products/8/edit" for 127.0.0.1 at 2024-06-12 16:19:12 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.0ms | Allocations: 1517)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1600)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | Allocations: 1702)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.7ms | Allocations: 4193)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/edit.html.erb:2
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 16:21:36 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 363)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 24164)
+Completed 200 OK in 44ms (Views: 29.5ms | ActiveRecord: 3.9ms | Allocations: 31649)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 16:21:38 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 3.4ms | Allocations: 807)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 6235)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.3ms | Allocations: 6600)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 16:21:51 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  Rendered products/common_items.html.erb within layouts/application (Duration: 0.5ms | Allocations: 87)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 437)
+  Rendered layout layouts/application.html.erb (Duration: 100.3ms | Allocations: 23956)
+Completed 200 OK in 109ms (Views: 102.7ms | ActiveRecord: 0.7ms | Allocations: 26925)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 16:22:05 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 29.6ms | Allocations: 4414)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 69.4ms | Allocations: 28239)
+Completed 200 OK in 90ms (Views: 79.6ms | ActiveRecord: 3.5ms | Allocations: 31206)
+
+
+Started GET "/products/3" for 127.0.0.1 at 2024-06-12 16:22:06 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 324)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 5743)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.3ms | Allocations: 7089)
+
+
+Started GET "/products/3/edit" for 127.0.0.1 at 2024-06-12 16:22:08 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.6ms | Allocations: 1444)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1790)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 3.4ms | Allocations: 12233)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+   <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Common Items</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some common item here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @common_items.each do |common_item| %>
+                                <li>
+                                    <%= link_to common_item.name, common_item %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                         <h1>Vegetables</h1>
+                           <h5 class="card-title"></h5>
+                         <p class="card-text">Some item of vegetables here!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                              <% @vegetables.each do |vegetable| %>
+                            <li>
+                                <%= link_to vegetable.name, vegetable %>
+                            </li>
+                            <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+                            </button>
+                        </div>
+                </div> 
+            </div>
+
+            <div class="col-md-4 col-6">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h1>Leafy Greens</h1>
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">Some item of Leafy Greens!</p>
+                    </div>
+                        <ul class="list-group list-group-flush">
+                            <ol>
+                                <% @leafy_greens.each do |leafy_green| %>
+                                <li>
+                                    <%= link_to leafy_green.name, leafy_green %>
+                                </li>
+                                <% end%>
+                            </ol>
+                        </ul>
+                        <div class="d-grid gap-2 col-4 mx-auto">
+                            <button type="button" class="btn btn-outline-primary">
+                            <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+                            </button>
+                        </div>
+
+
+
+
+<% end %>
+):
+1:    <%= form.select :product, selected: common_item , vegetable, leafy_green   %>
+2:       <div class="card" style="width: 22rem;">
+3:                        <div class="card-body">
+4:                            <h1>Common Items</h1>
+5:                            <h5 class="card-title"></h5>
+6:                            <p class="card-text">Some common item here!</p>
+7:                        </div>
+8:                            <ul class="list-group list-group-flush">
+9:                                <ol>
+10:                                    <% @common_items.each do |common_item| %>
+11:                                    <li>
+12:                                        <%= link_to common_item.name, common_item %>
+13:                                    </li>
+14:                                    <% end%>
+15:                                </ol>
+16:                            </ul>
+17:                            <div class="d-grid gap-2 col-4 mx-auto">
+18:                                <button type="button" class="btn btn-outline-primary">
+19:                                <a href="http://127.0.0.1:3000/common_items" class="card-link">Menu</a>
+20:                                </button>
+21:                            </div>
+22:                    </div> 
+23:                </div>
+24:    
+25:                <div class="col-md-4 col-6">
+26:                    <div class="card" style="width: 22rem;">
+27:                        <div class="card-body">
+28:                             <h1>Vegetables</h1>
+29:                               <h5 class="card-title"></h5>
+30:                             <p class="card-text">Some item of vegetables here!</p>
+31:                        </div>
+32:                            <ul class="list-group list-group-flush">
+33:                                <ol>
+34:                                  <% @vegetables.each do |vegetable| %>
+35:                                <li>
+36:                                    <%= link_to vegetable.name, vegetable %>
+37:                                </li>
+38:                                <% end%>
+39:                                </ol>
+40:                            </ul>
+41:                            <div class="d-grid gap-2 col-4 mx-auto">
+42:                                <button type="button" class="btn btn-outline-primary">
+43:                                <a href="http://127.0.0.1:3000/vegetables" class="card-link">Menu</a>
+44:                                </button>
+45:                            </div>
+46:                    </div> 
+47:                </div>
+48:    
+49:                <div class="col-md-4 col-6">
+50:                    <div class="card" style="width: 22rem;">
+51:                        <div class="card-body">
+52:                            <h1>Leafy Greens</h1>
+53:                            <h5 class="card-title"></h5>
+54:                            <p class="card-text">Some item of Leafy Greens!</p>
+55:                        </div>
+56:                            <ul class="list-group list-group-flush">
+57:                                <ol>
+58:                                    <% @leafy_greens.each do |leafy_green| %>
+59:                                    <li>
+60:                                        <%= link_to leafy_green.name, leafy_green %>
+61:                                    </li>
+62:                                    <% end%>
+63:                                </ol>
+64:                            </ul>
+65:                            <div class="d-grid gap-2 col-4 mx-auto">
+66:                                <button type="button" class="btn btn-outline-primary">
+67:                                <a href="http://127.0.0.1:3000/leafy_greens" class="card-link">Menu</a>
+68:                                </button>
+69:                            </div>
+70:    
+71:    
+72:    
+73:    
+74:    <% end %>
+  
+app/views/products/_form.html.erb:1: syntax error, unexpected ',', expecting =>
+app/views/products/_form.html.erb:76: syntax error, unexpected `end'
+app/views/products/edit.html.erb:2
+Started GET "/products/3" for 127.0.0.1 at 2024-06-12 16:31:02 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 363)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 24346)
+Completed 200 OK in 51ms (Views: 27.1ms | ActiveRecord: 5.9ms | Allocations: 34329)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 16:31:04 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 3.7ms | Allocations: 806)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6222)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms | Allocations: 6586)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:31:06 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_form_container.html.erb (Duration: 7.7ms | Allocations: 993)
+  Rendered products/_form.html.erb (Duration: 8.7ms | Allocations: 1303)
+  Rendered products/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1552)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 6566)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 6931)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:31:30 +0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 1.2ms | Allocations: 7078)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:30 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2806)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 8412)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.9ms | Allocations: 8745)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:31:31 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 2117)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:31 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7780)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.6ms | Allocations: 8051)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:31:32 +0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1973)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:32 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 7771)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.6ms | Allocations: 8042)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:31:32 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms | Allocations: 1978)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:32 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 7798)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.0ms | Allocations: 8069)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:31:33 +0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms | Allocations: 1979)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:33 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 7979)
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.5ms | Allocations: 8251)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:31:34 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms | Allocations: 1988)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:34 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 7899)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 8171)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:31:34 +0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1994)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:34 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 7778)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.6ms | Allocations: 8049)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:39 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 7757)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.6ms | Allocations: 8026)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:31:40 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1960)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:40 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 7771)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.6ms | Allocations: 8042)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2024-06-12 16:31:41 +0600
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms | Allocations: 1972)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:31:41 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2363)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 7964)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.7ms | Allocations: 8236)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 16:32:14 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 4.1ms | Allocations: 811)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 6419)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.3ms | Allocations: 6778)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:32:15 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_form_container.html.erb (Duration: 0.7ms | Allocations: 725)
+  Rendered products/_form.html.erb (Duration: 0.9ms | Allocations: 800)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 863)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5794)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 6069)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:41:27 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_form_container.html.erb (Duration: 0.8ms | Allocations: 1561)
+  Rendered products/_form.html.erb (Duration: 1.5ms | Allocations: 2058)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2404)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.5ms | Allocations: 11180)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<ActionView::Base:0x00000000028438>):
+     7:           <div class="card" style="border-radius: 15px;">
+     8:             <div class="card-body p-5">
+     9:               <h2 class="text-uppercase text-center mb-5"><%= header %></h2>
+    10:                 <%= yield %>
+    11:                     <p class="text-center text-muted mt-5 mb-0">Have already an account? 
+    12:                     <%= link_to "Sign In", new_user_session_path %>
+    13: 
+  
+app/views/products/_form.html.erb:4
+app/views/products/_form.html.erb:2
+app/views/shared/_form_container.html.erb:10
+app/views/products/_form.html.erb:1
+app/views/products/new.html.erb:10
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:42:23 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_form_container.html.erb (Duration: 9.7ms | Allocations: 1919)
+  Rendered products/_form.html.erb (Duration: 10.8ms | Allocations: 2404)
+  Rendered products/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2655)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 126.4ms | Allocations: 26145)
+Completed 200 OK in 147ms (Views: 129.3ms | ActiveRecord: 7.2ms | Allocations: 32593)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2024-06-12 16:42:29 +0600
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 17ms (ActiveRecord: 3.7ms | Allocations: 7673)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:42:29 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2951)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 8465)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.9ms | Allocations: 8837)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:45:45 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_form_container.html.erb (Duration: 2.6ms | Allocations: 1356)
+  Rendered products/_form.html.erb (Duration: 3.6ms | Allocations: 1842)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2093)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 25349)
+Completed 200 OK in 46ms (Views: 35.5ms | ActiveRecord: 1.9ms | Allocations: 31720)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:46:01 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 2.1ms | Allocations: 1366)
+  Rendered products/_form.html.erb (Duration: 3.4ms | Allocations: 1856)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2107)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 399)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 25116)
+Completed 200 OK in 42ms (Views: 29.4ms | ActiveRecord: 2.7ms | Allocations: 31543)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:46:18 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 1.7ms | Allocations: 1356)
+  Rendered products/_form.html.erb (Duration: 2.7ms | Allocations: 1842)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2097)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 399)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 25473)
+Completed 200 OK in 42ms (Views: 29.5ms | ActiveRecord: 2.8ms | Allocations: 31901)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:47:35 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 1.8ms | Allocations: 1317)
+  Rendered products/_form.html.erb (Duration: 2.7ms | Allocations: 1803)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2056)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 25441)
+Completed 200 OK in 43ms (Views: 29.7ms | ActiveRecord: 3.2ms | Allocations: 31823)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:47:45 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 1.4ms | Allocations: 1299)
+  Rendered products/_form.html.erb (Duration: 2.4ms | Allocations: 1785)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2036)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 408)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 25207)
+Completed 200 OK in 47ms (Views: 35.6ms | ActiveRecord: 2.8ms | Allocations: 31563)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:49:32 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 2.1ms | Allocations: 1284)
+  Rendered products/_form.html.erb (Duration: 3.6ms | Allocations: 1770)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2021)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 25145)
+Completed 200 OK in 43ms (Views: 30.7ms | ActiveRecord: 3.7ms | Allocations: 31573)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:49:47 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 1.5ms | Allocations: 1303)
+  Rendered products/_form.html.erb (Duration: 2.2ms | Allocations: 1789)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2044)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 25428)
+Completed 200 OK in 41ms (Views: 28.2ms | ActiveRecord: 3.6ms | Allocations: 31810)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:50:03 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 7.2ms | Allocations: 1273)
+  Rendered products/_form.html.erb (Duration: 8.0ms | Allocations: 1759)
+  Rendered products/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2010)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 25419)
+Completed 200 OK in 49ms (Views: 35.8ms | ActiveRecord: 4.3ms | Allocations: 31775)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:50:05 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 1.7ms | Allocations: 1041)
+  Rendered products/_form.html.erb (Duration: 1.9ms | Allocations: 1117)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1180)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 6178)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 6450)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:50:12 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 2.2ms | Allocations: 1293)
+  Rendered products/_form.html.erb (Duration: 3.1ms | Allocations: 1779)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2030)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 410)
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 25253)
+Completed 200 OK in 49ms (Views: 34.1ms | ActiveRecord: 3.1ms | Allocations: 31684)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:50:21 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered shared/_product_form_container.html.erb (Duration: 2.1ms | Allocations: 1290)
+  Rendered products/_form.html.erb (Duration: 3.2ms | Allocations: 1776)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2027)
+  Rendered shared/_navbar.html.erb (Duration: 1.3ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 28.2ms | Allocations: 25281)
+Completed 200 OK in 43ms (Views: 29.9ms | ActiveRecord: 2.4ms | Allocations: 31663)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:50:52 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.4ms | Allocations: 1476)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1731)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 25114)
+Completed 200 OK in 39ms (Views: 27.6ms | ActiveRecord: 2.3ms | Allocations: 31496)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:50:53 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.9ms | Allocations: 1055)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1118)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5944)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 6217)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:51:39 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.6ms | Allocations: 1484)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1737)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 25122)
+Completed 200 OK in 40ms (Views: 27.3ms | ActiveRecord: 1.9ms | Allocations: 31504)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:52:09 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.6ms | Allocations: 1487)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1738)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 408)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 24961)
+Completed 200 OK in 48ms (Views: 35.0ms | ActiveRecord: 2.5ms | Allocations: 31317)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:52:10 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.3ms | Allocations: 1043)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1106)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6023)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 6295)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:52:54 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.2ms | Allocations: 1479)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1730)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 24782)
+Completed 200 OK in 44ms (Views: 30.4ms | ActiveRecord: 4.0ms | Allocations: 31210)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:53:05 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.5ms | Allocations: 1484)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1739)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 25123)
+Completed 200 OK in 43ms (Views: 30.1ms | ActiveRecord: 2.9ms | Allocations: 31505)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 16:55:30 +0600
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/index.html.erb:9
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/index.html.erb:9
+  Rendered products/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 7030)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 403)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 30998)
+Completed 200 OK in 45ms (Views: 36.3ms | ActiveRecord: 3.9ms | Allocations: 33352)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:55:30 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.4ms | Allocations: 1845)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2091)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2182)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2513)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x000000011229fb40>::VALID_CATEGORIES):
+    24:     </div>
+    25: 
+    26:     <div class="form-outline mb-4">
+    27:         <%= p.select :category, VALID_CATEGORIES, class: "form-control" %>
+    28:     </div>
+    29: 
+    30:     <div class="d-flex justify-content-center">
+  
+app/views/products/_form.html.erb:27
+app/views/products/_form.html.erb:2
+app/views/products/new.html.erb:10
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:55:37 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.7ms | Allocations: 1482)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1747)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1847)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.4ms | Allocations: 8280)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<%= form_with model: product do |p| %>
+    <div class="form-outline mb-4">
+        <%= p.text_field :name, autofocus: true, class: "form-control", placeholder: "Product Name" %>
+    </div>
+
+    <div class="form-outline mb-4">
+        <%= p.text_field :variety, class: "form-control", placeholder: "Variety" %>
+    </div>
+
+    <div class="form-outline mb-4">
+        <%= p.date_field :mfg_date, class: "form-control", placeholder: "Manufaturing Date" %>
+    </div>
+    <div class="form-outline mb-4">
+        <%= p.date_field :expiry_date, class: "form-control", placeholder: "Expiry Date" %>
+    </div>        
+
+    <div class="form-outline mb-4">
+        <%= p.number_field :price, class: "form-control", placeholder: "Price in USD" %>
+    </div>
+    
+    <div class="form-outline mb-4">
+        <%= p.text_area :details, class: "form-control", placeholder: "Product Details" %>
+    </div>
+
+    <div class="form-outline mb-4">
+        <%= p.select :category, VALID_CATEGORIES class: "form-control" %>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <%= p.submit "Create Product", class: "btn btn-success" %>
+    </div>
+<% end %>
+
+):
+1:    
+2:    <%= form_with model: product do |p| %>
+3:        <div class="form-outline mb-4">
+4:            <%= p.text_field :name, autofocus: true, class: "form-control", placeholder: "Product Name" %>
+5:        </div>
+6:    
+7:        <div class="form-outline mb-4">
+8:            <%= p.text_field :variety, class: "form-control", placeholder: "Variety" %>
+9:        </div>
+10:    
+11:        <div class="form-outline mb-4">
+12:            <%= p.date_field :mfg_date, class: "form-control", placeholder: "Manufaturing Date" %>
+13:        </div>
+14:        <div class="form-outline mb-4">
+15:            <%= p.date_field :expiry_date, class: "form-control", placeholder: "Expiry Date" %>
+16:        </div>        
+17:    
+18:        <div class="form-outline mb-4">
+19:            <%= p.number_field :price, class: "form-control", placeholder: "Price in USD" %>
+20:        </div>
+21:        
+22:        <div class="form-outline mb-4">
+23:            <%= p.text_area :details, class: "form-control", placeholder: "Product Details" %>
+24:        </div>
+25:    
+26:        <div class="form-outline mb-4">
+27:            <%= p.select :category, VALID_CATEGORIES class: "form-control" %>
+28:        </div>
+29:    
+30:        <div class="d-flex justify-content-center">
+31:            <%= p.submit "Create Product", class: "btn btn-success" %>
+32:        </div>
+33:    <% end %>
+  
+app/views/products/_form.html.erb:27: syntax error, unexpected label, expecting `do' or '{' or '('
+app/views/products/new.html.erb:10
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:55:51 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.0ms | Allocations: 1874)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2125)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2217)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.0ms | Allocations: 8619)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x0000000110af9108>::VALID_CATEGORIES):
+    24:     </div>
+    25: 
+    26:     <div class="form-outline mb-4">
+    27:         <%= p.select :category, VALID_CATEGORIES %>
+    28:     </div>
+    29: 
+    30:     <div class="d-flex justify-content-center">
+  
+app/views/products/_form.html.erb:27
+app/views/products/_form.html.erb:2
+app/views/products/new.html.erb:10
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:56:43 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.9ms | Allocations: 1836)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2087)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2179)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.3ms | Allocations: 8581)
+
+
+  
+ActionView::Template::Error (uninitialized constant #<Class:0x000000011169e760>::VALID_CATEGORIES):
+    24:     </div>
+    25: 
+    26:     <div class="form-outline mb-4">
+    27:         <%= p.select :category, [VALID_CATEGORIES] %>
+    28:     </div>
+    29: 
+    30:     <div class="d-flex justify-content-center">
+  
+app/views/products/_form.html.erb:27
+app/views/products/_form.html.erb:2
+app/views/products/new.html.erb:10
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:59:23 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.1ms | Allocations: 2074)
+  Rendered products/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2325)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 25709)
+Completed 200 OK in 46ms (Views: 33.5ms | ActiveRecord: 3.4ms | Allocations: 32132)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 16:59:51 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.1ms | Allocations: 1535)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1790)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 25173)
+Completed 200 OK in 41ms (Views: 27.9ms | ActiveRecord: 3.6ms | Allocations: 31555)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2024-06-12 17:00:05 +0600
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.3ms | Allocations: 1080)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1143)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5968)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 6240)
+
+
+Started GET "/leafy_greens" for 127.0.0.1 at 2024-06-12 17:01:05 +0600
+Processing by ProductsController#leafy_greens as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/leafy_greens.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "leafy_green"]]
+  ↳ app/views/products/leafy_greens.erb:7
+  Rendered products/leafy_greens.erb within layouts/application (Duration: 2.8ms | Allocations: 879)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6313)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.2ms | Allocations: 6735)
+
+
+Started GET "/products/6" for 127.0.0.1 at 2024-06-12 17:01:06 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 320)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5720)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 7068)
+
+
+Started GET "/products/6/edit" for 127.0.0.1 at 2024-06-12 17:01:07 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.3ms | Allocations: 572)
+  Rendered products/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 734)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5556)
+Completed 200 OK in 35ms (Views: 8.1ms | ActiveRecord: 2.7ms | Allocations: 15980)
+
+
+Started GET "/products/6/edit" for 127.0.0.1 at 2024-06-12 17:02:19 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.6ms | Allocations: 1000)
+  Rendered products/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1257)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 406)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 24635)
+Completed 200 OK in 59ms (Views: 29.3ms | ActiveRecord: 5.8ms | Allocations: 40021)
+
+
+Started GET "/common_items" for 127.0.0.1 at 2024-06-12 17:02:26 +0600
+Processing by ProductsController#common_items as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/common_items.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "common_item"]]
+  ↳ app/views/products/common_items.html.erb:7
+  Rendered products/common_items.html.erb within layouts/application (Duration: 2.8ms | Allocations: 795)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 6205)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.2ms | Allocations: 6570)
+
+
+Started GET "/vegetables" for 127.0.0.1 at 2024-06-12 17:02:26 +0600
+Processing by ProductsController#vegetables as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/vegetables.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."category" = $1[0m  [["category", "vegetable"]]
+  ↳ app/views/products/vegetables.erb:7
+  Rendered products/vegetables.erb within layouts/application (Duration: 2.9ms | Allocations: 810)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 6220)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 6578)
+
+
+Started GET "/products/8" for 127.0.0.1 at 2024-06-12 17:02:28 +0600
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 320)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 101)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 5736)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.3ms | Allocations: 6483)
+
+
+Started GET "/products/8/edit" for 127.0.0.1 at 2024-06-12 17:02:29 +0600
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:75:in `find_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.5ms | Allocations: 558)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 621)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5442)
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 0.9ms | Allocations: 7936)
+
+
